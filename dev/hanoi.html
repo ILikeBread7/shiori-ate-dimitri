@@ -1,0 +1,100 @@
+<div id="left" style="min-width:100px;display:inline-block;background:#fee;"></div>
+<div id="middle" style="min-width:100px;display:inline-block;background:#efe;"></div>
+<div id="right" style="min-width:100px;display:inline-block;background:#eef;"></div>
+<br/>
+<button id="left_button" onclick="pick(0);">Left</button>
+<button id="middle_button" onclick="pick(1);">Middle</button>
+<button id="right_button" onclick="pick(2);">Right</button>
+
+<script>
+
+    var _level = 4;
+    var _left = [];
+    var _middle = [];
+    var _right = [];
+    var _paddles = [];
+    var _current = 0;
+
+    function init() {
+        _left = [];
+        _middle = [];
+        _right = [];
+        _paddles = [_left, _middle, _right];
+
+        for (var i = _level; i > 0; i--) {
+            _left.push(i);
+        }
+    }
+
+    function setPossibleMoveStart() {
+        var moveLeft = _left.length > 0;
+        var moveMiddle = _middle.length > 0;
+        var moveRight = _right.length > 0;
+        moveLeft
+        ? document.getElementById('left_button').removeAttribute('disabled')
+        : document.getElementById('left_button').setAttribute('disabled', 'disabled');
+        moveMiddle
+            ? document.getElementById('middle_button').removeAttribute('disabled')
+            : document.getElementById('middle_button').setAttribute('disabled', 'disabled');
+        moveRight
+            ? document.getElementById('right_button').removeAttribute('disabled')
+            : document.getElementById('right_button').setAttribute('disabled', 'disabled');
+    }
+
+    function setPossibleMoveEnd() {
+        var moveLeft = _left.length === 0 || _current < _left[_left.length - 1];
+        var moveMiddle = _middle.length === 0 || _current < _middle[_middle.length - 1];
+        var moveRight = _right.length === 0 || _current < _right[_right.length - 1];
+        moveLeft
+            ? document.getElementById('left_button').removeAttribute('disabled')
+            : document.getElementById('left_button').setAttribute('disabled', 'disabled');
+        moveMiddle
+            ? document.getElementById('middle_button').removeAttribute('disabled')
+            : document.getElementById('middle_button').setAttribute('disabled', 'disabled');
+        moveRight
+            ? document.getElementById('right_button').removeAttribute('disabled')
+            : document.getElementById('right_button').setAttribute('disabled', 'disabled');
+    }
+
+    function isOver() {
+        return _right.length === _level;
+    }
+
+    function pickStart(paddle) {
+        _current = _paddles[paddle].pop();
+        setPossibleMoveEnd();
+    }
+
+    function pickEnd(paddle) {
+        _paddles[paddle].push(_current);
+        _current = 0;
+        setPossibleMoveStart();
+        if (isOver()) {
+            alert('Done!');
+        }
+    }
+
+    function pick(paddle) {
+        if (_current) {
+            pickEnd(paddle);
+        } else {
+            pickStart(paddle);
+        }
+        write();
+    }
+
+    function write() {
+        document.getElementById('left').innerHTML = _left.join() + '&nbsp';;
+        document.getElementById('middle').innerHTML = _middle.join() + '&nbsp';;
+        document.getElementById('right').innerHTML = _right.join() + '&nbsp';;
+    }
+
+    function start() {
+        init();
+        setPossibleMoveStart();
+        write();
+    }
+
+    start();
+
+</script>

@@ -1,0 +1,8 @@
+https://opengameart.org/content/keyboard-keys
+https://opengameart.org/content/fantasy-ui-box
+https://opengameart.org/content/wood-texture-tiles
+https://opengameart.org/content/beige-stone-tile-floor-256px
+https://opengameart.org/content/walls-stained-with-blood
+
+http://sumrndm.site/automatic-name-boxes/
+http://yanfly.moe/2015/10/10/yep-2-message-core/ - message core plugin!!! not main menu manager
