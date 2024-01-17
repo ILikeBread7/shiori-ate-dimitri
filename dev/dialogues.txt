@@ -123,8 +123,8 @@ Let’s go, there’s no time to waste!
 
 What’s this? A pebble? What is it doing here?
 -pause-
-In any case, this could be it. If I manage to find three others, I’ll be able to perform the secret ritual, which will surely be enough to overpower everyone!
-I should probably check other rooms too; there might be more elsewhere in the house.
+In any case, this could be it. If I manage to find three others, I’ll be able to perform the secret ritual to summon all pebbles, which will surely be enough to overpower everyone!
+I will also need one more item, but fortunately, I think I know where to find it. I should probably check other rooms too; there might be more elsewhere in the house.
 Fortunately, the door doesn’t seem to be locked, but I still have to be careful. I can’t get caught snooping around.
 
 Okay, this is the last one. Now, let’s go back to the streaming room.
@@ -149,6 +149,8 @@ I guess it’s Shiover now!
 It’s Shiover.
 
 Neeeeigh.
+
+Dang it!
 
 The slab archive.
 An idol meeting chair.
