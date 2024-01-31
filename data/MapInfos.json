@@ -4,5 +4,6 @@ null,
 {"id":2,"expanded":false,"name":"MAP002","order":2,"parentId":0,"scrollX":477,"scrollY":328.5},
 {"id":3,"expanded":true,"name":"Nerissa's Room","order":3,"parentId":0,"scrollX":477,"scrollY":328.5},
 {"id":4,"expanded":false,"name":"Nerissa's Bathroom","order":4,"parentId":3,"scrollX":477,"scrollY":328.5},
-{"id":5,"expanded":false,"name":"Basement","order":5,"parentId":0,"scrollX":832,"scrollY":640}
+{"id":5,"expanded":false,"name":"Basement","order":5,"parentId":0,"scrollX":1040.7272727272727,"scrollY":716.7272727272727},
+{"id":6,"expanded":false,"name":"Shiori's house 2F","order":6,"parentId":0,"scrollX":469,"scrollY":320.5}
 ]

@@ -101,8 +101,8 @@ Okay, whatever. Quick, untie me, please. We need to call the police!
 The police?! I-I’m afraid I can’t do that, Biboo.
 What? Why not?
 If we call the police, Shiori is going to get arrested, and I don’t want to let that happen.
-If she turns herself in, she will get a reduced sentence! This is the best option. Do you really want to help her hide that body? You will be complicit in that crime!
-I… guess so, yeah.
+If she turns herself in, she will get a reduced sentence! This is the best option. Do you really want to help her hide that body? You will be complicit in that crime! Do you want to go back to that cell?
+N-No, but… I-I don’t want Shiori to go back there either.
 …
 …
 Okay, it’s your choice. By the way, can you at least get me something to eat? I haven’t eaten anything all day. I’m starving.
@@ -251,7 +251,7 @@ This is where I brush and floss my perfect teeth at least 3 times a day.
 I can't leave my house like this.
 I need to dress up first.
 
-What was that? Kinda sounded like Nerissa’s big gyatt falling down the stairs.
+What was that? Kinda sounded like Nerizzler’s big gyatt falling down the stairs.
 I guess it doesn’t matter. Anyway, let’s start the ritual.
 
 I guess he wasn’t innocent enough.
@@ -319,4 +319,20 @@ A feather you received from your oshi with a small engraving on the quill saying
 
 Ollie’s bandage
 A piece of bandage with a handwritten oath from your wife, saying “I promise that I will cheat on you. I will get new wives every single new day.”
+
+This is a "fossil" my "archeologist" dad once gave me.
+
+This is an "ancient artifact" my "archeologist" dad once brought me from "an ancient Egyptian pyramid".
+
+
+Now, can you be good guard dogs and protect the house house from bad ambulance people?
+Yes! Bau bau! (F)
+Of course! Bau bau! (M)
+Great, then I’ll leave it to you two, while I… attend other matters.
+
+It’s a map of the world.
+It includes Europe, where the mythical Europeans live.
+
+It’s a typewriter.
+I don’t even know how to use it. I only bought it because it looked fancy.
 
