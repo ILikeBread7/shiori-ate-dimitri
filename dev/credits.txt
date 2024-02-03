@@ -6,5 +6,7 @@ https://opengameart.org/content/walls-stained-with-blood
 
 https://starbirdresources.itch.io/haunted-mansion
 
+https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
+
 http://sumrndm.site/automatic-name-boxes/
 http://yanfly.moe/2015/10/10/yep-2-message-core/ - message core plugin!!! not main menu manager
