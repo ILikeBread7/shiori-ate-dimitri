@@ -18,4 +18,16 @@
         return info;
     };
 
+    DataManager.isThisGameFile = function(savefileId) {
+        var globalInfo = this.loadGlobalInfo();
+        if (globalInfo && globalInfo[savefileId]) {
+            if (StorageManager.isLocalMode()) {
+                return true;
+            }
+            var savefile = globalInfo[savefileId];
+            return savefile.globalId === this._globalId;
+        }
+        return false;
+    };
+
 })();
