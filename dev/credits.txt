@@ -10,3 +10,4 @@ https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-
 
 http://sumrndm.site/automatic-name-boxes/
 http://yanfly.moe/2015/10/10/yep-2-message-core/ - message core plugin!!! not main menu manager
+https://forums.rpgmakerweb.com/index.php?threads/hide-item-quantities.59568/

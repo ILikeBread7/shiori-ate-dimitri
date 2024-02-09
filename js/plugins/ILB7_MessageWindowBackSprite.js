@@ -94,7 +94,9 @@
                 _currentImage = skin - 1;
                 this._ILB7_sprite.bitmap = _image[_currentImage];
             }
-            this._ILB7_sprite.visible = true;
+            // Display only when background type is Window
+            // 0 = type Window
+            this._ILB7_sprite.visible = $gameMessage.background() === 0;
         }
         baseStartMessage.call(this);
     };
