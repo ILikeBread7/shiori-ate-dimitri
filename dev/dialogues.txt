@@ -354,6 +354,7 @@ I’ll tell him to pick it up the next time he comes by.
 It’s a table.
 Wait, this isn’t actually wood. It’s just a plastic table with a sticker that looks like wood.
 
+It's a couple of labeled jars.
 A bunch of jars? Eww… they’re all full of hair.
 *pause*
 Huh? What is this? They’re all labeled… Shiorium?
@@ -362,4 +363,30 @@ I think I should be able to slip out of this rope.
 Shiori didn’t tie me up too tightly.
 
 It's a plaque that says "Slab archive."
+
+Go upstairs and bring me an empty potting pot from the library and a bag of soil from the bedroom. You don’t have to bring the plant itself. I’ll take care of it.
+Got it!
+
+This is too heavy to carry around along with the other objects. I’ll let Shiori handle this one.
+
+Damn, this is heavy.
+
+*turns around*
+Um…
+*? emote and turns around*
+What’s up? Is something wrong?
+This might not be the best time to ask but… What’s up with the plant? Why are you carrying it right now?
+… (S)
+… (M)
+… (F)
+It’s a long story. Just go already; there isn’t much time to waste.
+O-okay.
+
+It's a hamburger along with a fork and a knife.
+
+It's a fridge. Half of the food inside is expired, moldy, or both.
+
+It's a creepy-looking painting.
+
+It's a case with figurines of Hololive and Dimitri.
 
