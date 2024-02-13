@@ -26,7 +26,11 @@ Dialogues
 Shiori~n! Shiori Novella here, at your service.
 *stab*
 Aaaaa!!!
-Now, how do I eat this?
+Now, how would Shiori Cookvella prepare this flesh?
+*! exclamation emote*
+I know! Let’s ask Dimitri himself!
+*turns to laptop*
+Dimitri AI! How to best prepare human flesh for consumption?
 I wouldn’t recommend eating it. Eating human flesh can lead to a variety of health issues, including but not limited to, Creutzfeldt–Jakob disease, with a mortality rate of 100%.
 As if that is going to stop me.
 I don’t feel too well…
@@ -129,13 +133,14 @@ Let’s go, there’s no time to waste!
 What’s this? A pebble? What is it doing here?
 -pause-
 In any case, this could be it. If I manage to find three others, I’ll be able to perform the secret ritual to summon all pebbles, which will surely be enough to overpower everyone!
-I will also need one more item, but fortunately, I think I know where to find it. I should probably check other rooms too; there might be more elsewhere in the house.
+I should probably check other rooms too; there might be more elsewhere in the house.
 Fortunately, the door doesn’t seem to be locked, but I still have to be careful. I can’t get caught snooping around.
+I think I can hear Nerissa’s footsteps! Quick, I have to return to the chair to avoid suspicion!
 
 Okay, this is the last one. Now, let’s go back to the streaming room.
 *teleport*
-The only thing left, needed for the ritual, is the blood of the innocent.
-Thankfully, there seems to be a fresh body waiting in the kitchen. Let’s go!
+Now I only need one last component, the blood of the innocent!
+Fortunately, there seems to be a fresh body waiting in the kitchen. Let’s go!
 
 I'm not a chihuahua, I'm Fuwawa!
 I'm not Fuwawa, I'm-
@@ -389,4 +394,59 @@ It's a fridge. Half of the food inside is expired, moldy, or both.
 It's a creepy-looking painting.
 
 It's a case with figurines of Hololive and Dimitri.
+
+*Shiori cooking in the kitchen*
+*doorbell*
+Someone’s at the door? I wonder who might it be? Biboo is supposed to come by later today but it’s still too early for that.
+
+Shiori Bonkvella here, at your service!
+
+Wow, she really is Shiori Bonkvella.
+
+I guess I’m Shiori Treevella now!
+Hey, Biboo! I brought you the food!
+… What’s that?
+Girl dinner!
+… And … what’s in it?
+It’s just some instant ramen noodles with some Pocky sticks.
+… In the same bowl? Pocky sticks? In instant ramen soup?
+Mhm!
+And you don’t see a problem with that?
+What do you mean?
+*pause*
+Never mind, it’s okay. I’ll eat it. I really am starving.
+*screen fades to black, eating sounds*
+How was it?
+It was… food… for sure.
+Was it good?
+Uhhh… y-yeah? I guess?
+Great! I’ll go back now. Shiori might need my help with the… thing.
+Yeah, sure. Thanks for the meal.
+You’re welcome! I’m glad you liked it, Biboo.
+*Rissa leaves, Biboo sweat emotion*
+Okay, now that she’s gone again I can sneak out and look for the rest of the pebbles. There’s no time to waste. Let’s go!
+
+I can’t leave now! Nerissa is about to walk into this room!
+
+Let’s look around some more before leaving the room. Maybe there's still something hidden around here that could help me.
+
+It’s a shotgun.
+This is for… self-defense.
+
+It’s a wardrobe full of berets, Hot Topic clothes, and differently colored striped sleeves.
+
+It's a book titled "Stockholm Syndrome and You."
+
+It's a small figure of a frog.
+
+It's a collection of seashells.
+
+This one is too full of clothes to hide in.
+There's no space for a person to enter.
+
+It's a bed with a dakimakura of Dimitri lying on it.
+
+It's a bag of potting soil.
+
+It's an empty pot.
 
