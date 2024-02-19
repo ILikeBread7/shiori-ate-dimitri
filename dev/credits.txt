@@ -13,6 +13,7 @@ https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-
 
 http://sumrndm.site/automatic-name-boxes/
 http://yanfly.moe/2015/10/10/yep-2-message-core/ - message core plugin!!! not main menu manager
+http://www.yanfly.moe/wiki/Event_Chase_Player_(YEP)
 https://forums.rpgmakerweb.com/index.php?threads/hide-item-quantities.59568/
 https://forums.rpgmakerweb.com/index.php?threads/conditional-show-choices-hide-or-disable-choices.96941/
 
@@ -35,3 +36,5 @@ Przemysław Tarka, CC BY 4.0 <https://creativecommons.org/licenses/by/4.0>, via 
 https://commons.wikimedia.org/wiki/File:Feather01.jpg
 https://upload.wikimedia.org/wikipedia/commons/0/01/Feather01.jpg
 The original uploader was Smartneddy at Chinese Wikipedia., CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons
+
+images cropped resized and added black background

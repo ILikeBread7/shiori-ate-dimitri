@@ -292,6 +292,7 @@ Oh, o-okay. (FWMC M?)
 Where did he go? (M)
 You don’t have to worry about it. (S)
 Oh… o-okay. (M)
+
 Wh-What happened? I thought I died.
 We patched you up. (S)
 With bandages. (F)
