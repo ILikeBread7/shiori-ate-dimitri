@@ -49,7 +49,7 @@ Oh, that… that makes sense. Sure, I’ll go see if she’s fine.
 Thanks, and I’m going to go get some tools for the body.
 O-Okay.
 *Shiori leaves*
-Oh my God, Shiori. I mean, I love you, but still…
+Two girls one corpse.
 
 
 These are too heavy. It’s hard to carry them down the stairs without… Aaaa!
@@ -84,6 +84,7 @@ Eh?
 *pause*
 What is going on?
 *pause*
+Oh, hi, Rissa!
 He’s dead! What have you done?
 It’s fine; we can still talk to AI Dimitri.
 W-What? No that’s… that’s not what I meant.
@@ -307,6 +308,7 @@ Been there. (N if stepped)
 Umm… thanks… I guess you’re right.
 *at the door*
 Goodbye, everyone.
+*turn invisibility on for Novelite (Player)*
 Goodbye and see you next time! (S)
 *leaves*
 I guess it’s Shiover for real this time. For real. For real. (S)
@@ -319,7 +321,7 @@ We love you too. (FWMC & B)
 Good thing we managed to save that one. I would be sadshi if we didn’t.
 Yeah. (everyone except Shiori)
 And I don’t have another empty pot.
-*menacingly cuts to pot*
+*menacingly cuts to pot (teleport to Dimitri plant in the kitchen)*
 
 A letter from your sister
 A letter from your older sister Hakos Baelz
@@ -338,7 +340,7 @@ This is a "fossil" my "archeologist" dad once gave me.
 This is an "ancient artifact" my "archeologist" dad once brought me from "an ancient Egyptian pyramid".
 
 
-Now, can you be good guard dogs and protect the house house from bad ambulance people?
+Now, can you be good guard dogs and protect our smiles from bad ambulance people?
 Yes! Bau bau! (F)
 Of course! Bau bau! (M)
 Great, then I’ll leave it to you two, while I… attend other matters.
@@ -479,6 +481,8 @@ bruteforce - ゴリ押し（ゴリおし gorioshi）
 self-inserter girl - 夢女子（ゆめじょし yumejoshi）
 a girl liking male-on-male action - 腐女子（ふじょし fujoshi）
 
+Ok, cool! Now I just need to wait for Rissa to come.
+
 In the meantime, let’s go get some cleaning stuff from the bathroom. I should take care of that bloodstain on the kitchen floor.
 
 You called an ambulance?!
@@ -487,4 +491,12 @@ Fuwamoco might buy me some time, but I’m pretty sure the ambulance is going to
 
 I guess it doesn’t make sense to clean the kitchen floor right now when I’m going to make a big mess while cutting up this body anyway.
 Let’s bring the plant here first. I left it in the library upstairs.
+
+This whole situation turned into a huge mess. What should I do? I could handle a cadaver or two on my own, but not when dealing with Biboo at the same time.
+*pause* *exclamation balloon*
+I know! Let’s call Rissa! She would help me with anything!
+*turn down* *dialing sound*
+-phone conversation-
+
+Now, let's go back to the kitchen!
 
