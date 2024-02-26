@@ -47,7 +47,7 @@ Eh? Wh-Why did you have to knock her out?
 Because she was trying to call the police.
 Oh, that… that makes sense. Sure, I’ll go see if she’s fine.
 Thanks, and I’m going to go get some tools for the body.
-O-Okay.
+O-Okay. Well then, I'm off to go check up on Biboo.
 *Shiori leaves*
 Two girls one corpse.
 
@@ -204,7 +204,7 @@ I wonder how this looks under a microscope.
 Maybe I should take a sample.
 *takes sample*
 
-I guess this is now a murder house.
+I guess the Inkwell Residence is now a murder house.
 Not too far off my childhood home.
 Eh?
 It’s a joke. It’s a joke. I love my parents, I swear.
@@ -284,15 +284,40 @@ Fuwamoco at the end:
 I don’t really understand what happened. (M)
 Me too, Moco-chan. (F)
 
+*ambulance people looking all over kitchen*
+Oh, hello there. May I help you?
+Hi, we received a call that there was a person here in need of medical assistance due to getting stabbed.
+Oh, nyo. That sounds scawy. But there is no\fibody\fi like that in here. It must be my neighbors playing pranks on me again. They do these kinds of things all the time.
+It seems so. Sorry for the intrusion. Have a nice day.
+Have a nice day too.
+*ambulance people leave*
+*fuwamoco comes in looking around with ? emotion bubbles*
 Where did he go? (FWMC M?)
 You don’t have to worry about that. (S)
 Oh, o-okay. (FWMC M?)
 (Guess he’s dead.) (F) only fuwamoco route
 (And got disposed of.) (M)  only fuwamoco route
+*biboo and rissa come*
+I guess maybe wa \fican\fi get away with it! (B)
+Yeah! (S)
+*happy emotion bubbles*
+And let’s not talk about this incident ever again! (S)
+Agreed! (All)
+*happy emotion bubbles*
 
-Where did he go? (M)
-You don’t have to worry about it. (S)
-Oh… o-okay. (M)
+I can’t let you go through! (Rissa)
+We’ll see about that! (B)
+*rissa catches biboo*
+Got you!
+Are you sure?
+*biboo slips through*
+Ha ha ha! \fiI\fi got \fiyou\fi!
+Biboo, no!
+*biboo goes to the living room*
+… Where’s the ambulance? Did it already leave? Was I too late?
+*rissa comes in*
+Ope, seems like it.
+*biboo and rissa go to the kitchen*
 
 Wh-What happened? I thought I died.
 We patched you up. (S)
@@ -315,7 +340,7 @@ I guess it’s Shiover for real this time. For real. For real. (S)
 *happy emoticons*
 I love you all. (S)
 Oh, I love you too, baby girl. (N)
-We love you too. (FWMC & B)
+We love you too, Shiori. (FWMC & B)
 *happy emoticons*
 *credits*
 Good thing we managed to save that one. I would be sadshi if we didn’t.
@@ -500,3 +525,8 @@ I know! Let’s call Rissa! She would help me with anything!
 
 Now, let's go back to the kitchen!
 
+I think I saw a bunch of boxes at the end of the hallway. Maybe it’s worth it to check them out.
+
+I’m sorry, but we will have to take a look ourselves.
+*pushed fuwamoco away*
+Ugh…
