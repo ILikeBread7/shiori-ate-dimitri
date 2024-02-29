@@ -154,6 +154,9 @@ Call an ambulance, Moco-chan! And I will look for some blankets to warm him up!
 Okay, got it!
 
 Wait, let me save some for later.
+*cut animation* wait until over
+*walk to the fridge, stop (wait 60), and walk back*
+*continue the scene*
 
 I guess it’s Shiover now!
 
@@ -192,11 +195,11 @@ My OCD is kicking in. It’s never going to be perfect. My parents are never goi
 It’s a joke. It’s a joke.
 
 
-…
+*before cutting up the body*
 He’s getting a little stiff. I guess he had a visit from a certain Mortis.
-Who?
 Rigor mortis.
-Eh?
+Anyway, let’s get to work. There’s no time to waste.
+
 *Shiori looking at the body*
 Is something wrong?
 I wonder how this looks under a microscope.
@@ -303,12 +306,15 @@ Oh, o-okay. (FWMC M?)
 *biboo and rissa come*
 I guess maybe wa \fican\fi get away with it! (B)
 Yeah! (S)
+I’m sorry I tried to call the police on you, Shiori.
+It’s okay. there, there.
 *happy emotion bubbles*
 And let’s not talk about this incident ever again! (S)
 Agreed! (All)
 *happy emotion bubbles*
 
-I can’t let you go through! (Rissa)
+Move aside, Nerissa!
+You know I can’t let you go through! (Rissa)
 We’ll see about that! (B)
 *rissa catches biboo*
 Got you!
@@ -564,4 +570,49 @@ That explosion sound from earlier was very suspicious.
 Could you go check on her again and make sure that she's not onto some funky business?
 
 There is no time! I need to dispose of this body before the ambulance arrives!
+
+Let's go to the basement to pick up the hacksaw.
+Let's go back to the kitchen.
+
+
+*explosion*
+*! balloons*
+And what was that?
+I have no idea.
+I have a bad feeling about this. The explosion might’ve had something to do with Biboo’s antics. I’m afraid she could be trying to escape.
+Could you go check on her again and make sure that she's not onto some funky business over there?
+Sure, leave it to me!
+
+Arrow keys / WASD - movement
+ENTER / Z / Space - confirm / interact
+ESC / X - cancel / open menu
+Shift - run
+
+It's a cutting board left in the middle of preparing some Thai dish from Thailand.
+
+It's a bloodstain.
+
+That was tough, but finally it’s time to clean up this place.
+
+This might be just a measly bloodstain, but if the paramedics see it all sorts of suspicions will arise.
+I should hurry!
+*Shiori’s minigame*
+
+Okay, it's done!
+
+… What was that?
+so heavy
+Did you just fall down the stairs? Are you okay?
+Yeah, I’m fine. I have some… amortization.
+Oh, okay, cool.
+Anyway, thanks for bringing everything, Rissa!
+You can put it all down next to the plant.
+
+Got it.
+
+Not that I'm going to need it anymore, though.
+
+There is no time to leave the kitchen!
+I still need to clean up the bloodstain
+on the floor.
 
