@@ -136,7 +136,8 @@ What’s this? A pebble? What is it doing here?
 In any case, this could be it. If I manage to find three others, I’ll be able to perform the secret ritual to summon all pebbles, which will surely be enough to overpower everyone!
 I should probably check other rooms too; there might be more elsewhere in the house.
 Fortunately, the door doesn’t seem to be locked, but I still have to be careful. I can’t get caught snooping around.
-I think I can hear Nerissa’s footsteps! Quick, I have to return to the chair to avoid suspicion!
+II think I can hear someone's footsteps!
+Quick, I have to return to the chair to avoid suspicion!
 
 Okay, this is the last one. Now, let’s go back to the streaming room.
 *teleport*
@@ -294,7 +295,7 @@ Me too, Moco-chan. (F)
 Oh, hello there. May I help you?
 Hi, we received a call that there was a person here in need of medical assistance due to getting stabbed.
 Oh, nyo. That sounds scawy. But there is no\fibody\fi like that in here. It must be my neighbors playing pranks on me again. They do these kinds of things all the time.
-It seems so. Sorry for the intrusion. Have a nice day.
+It seems so. Sorry for the intrusion, and have a nice day.
 Have a nice day too.
 *ambulance people leave*
 *fuwamoco comes in looking around with ? emotion bubbles*
@@ -304,13 +305,12 @@ Oh, o-okay. (FWMC M?)
 (Guess he’s dead.) (F) only fuwamoco route
 (And got disposed of.) (M)  only fuwamoco route
 *biboo and rissa come*
-I guess maybe wa \fican\fi get away with it! (B)
+Maybe we \fican\fi get away with this! (B)
 Yeah! (S)
-I’m sorry I tried to call the police on you, Shiori.
+I’m sorry I tried to call the police on you earlier, Shiori.
 It’s okay. there, there.
 *happy emotion bubbles*
 And let’s not talk about this incident ever again! (S)
-Agreed! (All)
 *happy emotion bubbles*
 
 Move aside, Nerissa!
@@ -457,7 +457,7 @@ You’re welcome! I’m glad you liked it, Biboo.
 *Rissa leaves, Biboo sweat emotion*
 Okay, now that she’s gone again I can sneak out and look for the rest of the pebbles. There’s no time to waste. Let’s go!
 
-I can’t leave now! Nerissa is about to walk into this room!
+I can’t leave now! Someone is about to walk into this room!
 
 Let’s look around some more before leaving the room. Maybe there's still something hidden around here that could help me.
 
@@ -615,4 +615,30 @@ Not that I'm going to need it anymore, though.
 There is no time to leave the kitchen!
 I still need to clean up the bloodstain
 on the floor.
+
+This is not the bathroom/bedroom. I can’t waste any more time! He needs help as soon as possible!
+
+*Rissa leaves her house*
+*screen fades* (name display off? not if event is on Rissa’s doors)
+*doorbell sound*
+Come in!
+*door sound* *teleport to kitchen* (map name on?)
+*rest of dialogue*
+
+Finally, I have all the pebbles I will need to perform the secret ritual!
+Let’s head back!
+*teleport back to streaming room - rest of dialogues about blood of the innocent*
+
+The ambulance is going to be here any moment! We need to wait at the front door!
+
+Oh, crap!
+They're already here!
+I hope Fuwamoco will stall them long enough for me to finish cleaning up this mess!
+
+Let's finally take care of that bloodstain.
+Quick, there's no time to waste!
+The paramedics might walk in at any moment!
+
+
+
 
