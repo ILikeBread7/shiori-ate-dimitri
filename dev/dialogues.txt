@@ -739,5 +739,42 @@ Let’s head back and set everything up!
 Okay, everything is set up!
 Let’s start!
 
-Okay, now, let's add the blood...
+Okay, now, let's add the blood…
+
+And the ambulance is coming this way!
+Hurry, Rissa!
+There’s no time to waste!
+Got it!
+
+*doorbell*
+They’re already here!
+Let me through, Rissa!
+You wish.
+*Rissa catching Biboo minigame starts*
+
+What is 10+9?
+19 -> Correct!
+21 -> Close enough.
+other -> Try again.
+
+Loop
+ Choice
+  Incorrect -> switch disable option
+  Correct -> Break loop
+End of loop
+Reset switches
+Loop…
+
+What is the name of Nerissa’s fans?
+Jailbirds
+Bailjirds
+How is this related to the situation? -> Trust me, this is vital information.
+
+Oh no, Shiori’s here.
+I have to be sneaky.
+
+Now she’s here?!
+Give me a break.
+
+It's an hourglass-themed clock.
 
