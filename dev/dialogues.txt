@@ -468,7 +468,7 @@ Let’s look around some more before leaving the room. Maybe there's still somet
 It’s a shotgun.
 This is for... self-defense.
 
-It’s a wardrobe full of berets, Hot Topic clothes, and differently colored striped sleeves.
+It’s a wardrobe full of berets, Hot Topic clothes, backpacks, and differently colored striped sleeves.
 
 It's a book titled "Stockholm Syndrome and You."
 
@@ -765,10 +765,17 @@ End of loop
 Reset switches
 Loop…
 
-What is the name of Nerissa’s fans?
+What are Nerissa’s fans called?
 Jailbirds
 Bailjirds
 How is this related to the situation? -> Trust me, this is vital information.
+
+
+What are Fuwamoco’s fans called?
+Ruffians
+Wuffians (Close enough)
+Baubauians
+Wanians
 
 Oh no, Shiori’s here.
 I have to be sneaky.
@@ -777,4 +784,9 @@ Now she’s here?!
 Give me a break.
 
 It's an hourglass-themed clock.
+
+There is no time to go anywhere!
+I need to get to the ambulance before they leave!
+
+Let's check out the kitchen, I guess.
 
