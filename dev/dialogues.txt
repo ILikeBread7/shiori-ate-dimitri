@@ -201,6 +201,10 @@ He’s getting a little stiff. I guess he had a visit from a certain Mortis.
 Rigor mortis.
 Anyway, let’s get to work. There’s no time to waste.
 
+He’s getting a little stiff.
+Are you happy to see me or are you getting rigor mortis?
+I guess the latter.
+
 *Shiori looking at the body*
 Is something wrong?
 I wonder how this looks under a microscope.
@@ -777,6 +781,20 @@ Wuffians (Close enough)
 Baubauians
 Wanians
 
+What is the name of the little creature Shiori always carries around?
+Eric
+Eureke
+Yorick
+Yo, Rick!
+
+What is the name of (Pero? find what he is)
+Mero
+Bero
+Pero
+Dero
+
+A question about Biboo
+
 Oh no, Shiori’s here.
 I have to be sneaky.
 
@@ -789,4 +807,14 @@ There is no time to go anywhere!
 I need to get to the ambulance before they leave!
 
 Let's check out the kitchen, I guess.
+
+Are you sure you want to go back to the title screen?
+Choose your route.
+
+Shiori will be so happy about our surprise visit!
+Yeah! We’re going to have a lot of fun today!
+She’s probably in the kitchen preparing dinner right now.
+Let’s go! Bau bau!
+
+This isn't the way to the kitchen.
 
