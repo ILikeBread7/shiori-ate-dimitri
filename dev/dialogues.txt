@@ -203,7 +203,7 @@ Anyway, let’s get to work. There’s no time to waste.
 
 He’s getting a little stiff.
 Are you happy to see me or are you getting rigor mortis?
-I guess the latter.
+I guess it’s the latter.
 
 *Shiori looking at the body*
 Is something wrong?
@@ -416,7 +416,9 @@ Damn, this is heavy.
 Um...
 *? emote and turns around*
 What’s up? Is something wrong?
-This might not be the best time to ask but... What’s up with the plant? Why are you carrying it right now?
+This might not be the best time to ask but...
+What’s up with the plant in the bag over there?
+Why is it here right now?
 ... (S)
 ... (M)
 ... (F)
@@ -665,8 +667,9 @@ And the other one is labeled Pages?
 A couple of jars?
 These have some living creatures inside!
 
+I called the ambulance and they told me to do push-ups on his chest to save him!
 You have to push harder, Moco-chan! He’s going to die!
-I’m getting a little tired. How about you take over the push-ups, and I go look for some blanket to warm him up? He’s getting really cold.
+I’m getting a little tired. How about you bandage him and take over the push-ups, and I go look for some blanket to warm him up? He’s getting really cold.
 Okay, sure! There should probably be some blankets in the bedroom upstairs.
 Got it!
 
@@ -793,6 +796,11 @@ Bero
 Pero
 Dero
 
+What are the fans of Hololive Advent called?
+Adventrix
+Adventurers
+The Advent Calendar
+
 A question about Biboo
 
 Oh no, Shiori’s here.
@@ -817,4 +825,27 @@ She’s probably in the kitchen preparing dinner right now.
 Let’s go! Bau bau!
 
 This isn't the way to the kitchen.
+
+It's an unconscious person.
+
+I'm calling the ambulance!
+Go get some bandages from the bathroom!
+
+Some regular bandages.
+
+I found the bandages!
+
+I have the bandages!
+What are you doing, Moco-chan?
+
+I’m doing the push-ups!
+Go get a blanket from the bedroom upstairs!
+
+A blanket with Dimitri's image printed on it.
+It's probably some merch.
+
+Be good guard dogs and go to the front door to protect our smiles from bad ambulance people!
+
+We have to stay at the front door!
+
 
