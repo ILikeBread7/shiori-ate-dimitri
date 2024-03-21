@@ -749,6 +749,12 @@ Let’s start!
 Okay, now, let's add the blood…
 
 And the ambulance is coming this way!
+Ambulance?!
+What? Why?
+Who called an ambulance?
+Don’t worry about it.
+Just go!
+They will be here any moment and I’m seriously worried about Biboo’s mischiefs giving us away.
 Hurry, Rissa!
 There’s no time to waste!
 Got it!
@@ -773,6 +779,7 @@ Reset switches
 Loop…
 
 What are Nerissa’s fans called?
+Ravens
 Jailbirds
 Bailjirds
 How is this related to the situation? -> Trust me, this is vital information.
@@ -790,16 +797,18 @@ Eureke
 Yorick
 Yo, Rick!
 
-What is the name of (Pero? find what he is)
+What is the name of Fuwamoco’s pet?
 Mero
 Bero
 Pero
 Dero
 
+And finally the last question.
 What are the fans of Hololive Advent called?
 Adventrix
 Adventurers
 The Advent Calendar
+Novejailpebbluffians
 
 A question about Biboo
 
@@ -871,4 +880,58 @@ I’m confused…
 Me too…
 
 They’re here!
+
+Could you see me to that person?
+
+He… he’s not here.
+… Excuse me?
+We don’t know anyone like that.
+So… you weren’t the one who called us?
+N-no…
+
+So who made the call?
+
+The neighbors.
+We don’t know, it was probably a random prank.
+You must have the wrong address.
+Us.
+
+But I recognize your voice.
+Oh…
+
+Is this the Inkwell Residence?
+Y-yes.
+So it’s not the wrong address.
+Oh…
+
+Okay, then.
+
+So why did you call?
+We’re sorry, we… we mistook a tree for a dead body?
+It was a… prank?
+\fiWe\fi got the wrong address!
+We… we don’t know…
+
+Uhh… sure…
+
+
+You sounded fairly panicked on the phone.
+That’s not how someone performing a prank sounds.
+Oh…
+
+So someone was stabbed at a \fidifferent\fi address?
+N-no!
+
+There must be something.
+People don’t just call an ambulance for no reason.
+Oh…
+
+What is Biboo made of?
+Good emotions.
+Bad emotions.
+All kinds of human emotions.
+What emotions? I thought she was just a rock.
+
+Koseki Bijou is "The Jewel of Emotions."
+She’s not just a rock.
 
