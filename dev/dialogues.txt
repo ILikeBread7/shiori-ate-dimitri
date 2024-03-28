@@ -342,14 +342,15 @@ With bandages. (F)
 And push-ups. (M)
 And some condensed Shiorium. (S)
 ...push-ups?
-Maybe I’m not the one to say this, but should really take better care of yourself [name]. You shouldn’t let other people cut you up and cannibalize you. (S)
-Now go home darling and take a good rest. (N)
+Maybe I’m not the one to say this, but you should really take better care of yourself [name]. You shouldn’t let other people cut you up and cannibalize you. (S)
+Now go home, darling, and take a good rest. (N)
 You really need it. I don’t know why the paramedics didn’t want to take you to the hospital.
-And wipe the footprints off your face. You look really dumb. (S if stepped)
+And wipe the footprints off your face. You look really dumb. No offense.
+ (S if stepped)
 Been there. (N if stepped)
 Umm... thanks... I guess you’re right.
 *at the door*
-Goodbye, everyone.
+Thanks, everyone, and goodbye.
 *turn invisibility on for Novelite (Player)*
 Goodbye and see you next time! (S)
 *leaves*
@@ -987,3 +988,4 @@ This is my TV where I watch the streams of Shiori and the rest of Advent.
 Are you okay?
 
 All right.
+
