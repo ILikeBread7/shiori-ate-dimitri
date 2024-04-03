@@ -10,17 +10,25 @@
  * @desc Time delay for save debounce, if you don't know what that means leave the default value (500)
  * @default 500
  *
+ * @param Switch ID
+ * @desc ID of the switch to turn autosave on, empty (or 0) if should be on all the time, does not affect manual autosave
+ * @default 0
+ * 
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
  *       It creates the autosave file whenever an event finishes execution.
  *       The saves are debounced (delayed and omitted if a new save needs to be performed)
  *       to limit saving multiple times when more than one event finishes at the same time.
  *       The autosave file is overwritten each time a new autosave occurs.
+ * 
+ * Plugin Command:
+ *   ILB7_Autosave # Performs autosave manually
  */
 
 (function() {
 
     var parameters = PluginManager.parameters('ILB7_Autosave');
     var debounceTime = Number(parameters['Debounce time (miliseconds)'] || 0);
+    var switchId = Number(parameters['Switch ID']);
 
     function save() {
         var saveFileId = Window_SavefileList.prototype.maxItems();
@@ -36,10 +44,13 @@
     var baseUnlock = Game_Event.prototype.unlock;
     Game_Event.prototype.unlock = function() {
         baseUnlock.call(this);
-        if (debounceTimeout) {
-            clearTimeout(debounceTimeout);
+        
+        if (switchId && $gameSwitches.value(switchId)) {
+            if (debounceTimeout) {
+                clearTimeout(debounceTimeout);
+            }
+            debounceTimeout = setTimeout(save, debounceTime);
         }
-        debounceTimeout = setTimeout(save, debounceTime);
     };
 
     var baseLocalFilePath = StorageManager.localFilePath;
@@ -79,5 +90,15 @@
         }
         this.drawText('Autosave', x, y, width);
     };
+
+    var base = Game_Interpreter.prototype.pluginCommand;
+    Game_Interpreter.prototype.pluginCommand = function(command, args) {
+        base.call(this, command, args);
+        switch (command) {
+            case 'ILB7_Autosave':
+                save();
+            break;
+        }
+    }
 
 })();
