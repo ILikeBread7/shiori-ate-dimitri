@@ -7,11 +7,11 @@
  * @author I_LIKE_BREAD7
  * 
  * @param Debounce time (miliseconds)
- * @desc Time delay for save debounce, if you don't know what that means leave the default value (500)
- * @default 500
+ * @desc Time delay for save debounce, if you don't know what that means leave the default value (0)
+ * @default 0
  *
  * @param Switch ID
- * @desc ID of the switch to turn autosave on, empty (or 0) if should be on all the time, does not affect manual autosave
+ * @desc ID of the switch to turn autosave on, 0 if should be on all the time, does not affect autosave from plugin command
  * @default 0
  * 
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
@@ -21,7 +21,8 @@
  *       The autosave file is overwritten each time a new autosave occurs.
  * 
  * Plugin Command:
- *   ILB7_Autosave # Performs autosave manually
+ *   ILB7_Autosave         # Performs autosave manually
+ *   ILB7_Autosave prevent # Prevents autosave if put at the end of an event that would otherwise autosave
  */
 
 (function() {
@@ -30,22 +31,28 @@
     var debounceTime = Number(parameters['Debounce time (miliseconds)'] || 0);
     var switchId = Number(parameters['Switch ID']);
 
+    var AUTOSAVE_ID = 1;
+
+    var needsToSave = false;
+
     function save() {
-        var saveFileId = Window_SavefileList.prototype.maxItems();
+        console.log('save');
+        var saveFileId = AUTOSAVE_ID;
         $gameSystem.onBeforeSave();
-        if (DataManager.saveGame(saveFileId)) {
+        if (DataManager.autosaveGame(saveFileId)) {
             StorageManager.cleanBackup(saveFileId);
+            needsToSave = false;
         } else {
             console.err('Autosave error!');
         }
     }
     
     var debounceTimeout = null;
-    var baseUnlock = Game_Event.prototype.unlock;
+    var _Game_Event_unlock = Game_Event.prototype.unlock;
     Game_Event.prototype.unlock = function() {
-        baseUnlock.call(this);
+        _Game_Event_unlock.call(this);
         
-        if (switchId && $gameSwitches.value(switchId)) {
+        if (needsToSave && (!switchId || $gameSwitches.value(switchId))) {
             if (debounceTimeout) {
                 clearTimeout(debounceTimeout);
             }
@@ -53,51 +60,85 @@
         }
     };
 
-    var baseLocalFilePath = StorageManager.localFilePath;
-    StorageManager.localFilePath = function (savefileId) {
-        if (savefileId === 21) {
-            return StorageManager.localFileDirectoryPath() + 'autosave.rpgsave';
-        }
-        return baseLocalFilePath.call(this, savefileId);
+    DataManager.autosaveGame = function(saveFileId) {
+        var last = this._lastAccessedId;
+        var result = DataManager.saveGame(saveFileId);
+        this._lastAccessedId = last;
+        return result;
     }
 
-    var baseMaxFiles = Window_SavefileList.prototype.maxItems;
-    Window_SavefileList.prototype.maxItems = function() {
-        return baseMaxFiles.call(this) + 1;
-    }
-
-    DataManager.saveGameWithoutRescue = function(savefileId) {
-        var json = JsonEx.stringify(this.makeSaveContents());
-        if (json.length >= 200000) {
-            console.warn('Save data too big!');
-        }
-        StorageManager.save(savefileId, json);
-        if (savefileId !== Window_SavefileList.prototype.maxItems()) {
-            this._lastAccessedId = savefileId;
-        }
-        var globalInfo = this.loadGlobalInfo() || [];
-        globalInfo[savefileId] = this.makeSavefileInfo();
-        this.saveGlobalInfo(globalInfo);
-        return true;
+    var _Game_Player_performTransfer = Game_Player.prototype.performTransfer;
+    Game_Player.prototype.performTransfer = function() {
+        _Game_Player_performTransfer.call(this);
+        needsToSave = true;
+    };
+    
+    var _Game_Switches_setValue = Game_Switches.prototype.setValue;
+    Game_Switches.prototype.setValue = function(switchId, value) {
+        _Game_Switches_setValue.call(this, switchId, value);
+        needsToSave = true;
+    };
+    
+    var _Game_Variables_setValue = Game_Variables.prototype.setValue;
+    Game_Variables.prototype.setValue = function(variableId, value) {
+        _Game_Variables_setValue.call(this, variableId, value);
+        needsToSave = true;
+    };
+    
+    var _Game_SelfSwitches_setValue = Game_SelfSwitches.prototype.setValue;
+    Game_SelfSwitches.prototype.setValue = function(key, value) {
+        _Game_SelfSwitches_setValue.call(this, key, value);
+        needsToSave = true;
+    };
+    
+    var _Game_Party_gainItem = Game_Party.prototype.gainItem;
+    Game_Party.prototype.gainItem = function(item, amount, includeEquip) {
+        _Game_Party_gainItem.call(this, item, amount, includeEquip);
+        needsToSave = true;
+    };
+    
+    var _Game_Party_loseItem = Game_Party.prototype.loseItem;
+    Game_Party.prototype.loseItem = function(item, amount, includeEquip) {
+        _Game_Party_loseItem.call(this, item, amount, includeEquip);
+        needsToSave = true;
+    };
+    
+    var _Game_Party_addActor = Game_Party.prototype.addActor;
+    Game_Party.prototype.addActor = function(actorId) {
+        _Game_Party_addActor.call(this, actorId);
+        needsToSave = true;
+    };
+    
+    var _Game_Party_removeActor = Game_Party.prototype.removeActor;
+    Game_Party.prototype.removeActor = function(actorId) {
+        _Game_Party_removeActor.call(this, actorId);
+        needsToSave = true;
     };
 
-    var baseDrawFileId = Window_SavefileList.prototype.drawFileId;
+    var _Window_SavefileList_drawFileId = Window_SavefileList.prototype.drawFileId;
     Window_SavefileList.prototype.drawFileId = function(id, x, y) {
-        var width = 180;
-        if (id !== Window_SavefileList.prototype.maxItems()) {
-            baseDrawFileId.call(this, id, x, y, width);
-            return;
+        if (id === AUTOSAVE_ID) {
+            this.drawText('(Autosave)', x, y + this.lineHeight());
         }
-        this.drawText('Autosave', x, y, width);
+        _Window_SavefileList_drawFileId.call(this, id, x, y);
     };
 
-    var base = Game_Interpreter.prototype.pluginCommand;
+    var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
     Game_Interpreter.prototype.pluginCommand = function(command, args) {
-        base.call(this, command, args);
-        switch (command) {
-            case 'ILB7_Autosave':
-                save();
-            break;
+        _Game_Interpreter_pluginCommand.call(this, command, args);
+        if (command === 'ILB7_Autosave') {
+            switch(args[0]) {
+                case 'prevent':
+                    needsToSave = false;
+                break;
+
+                // if no arg provided, just save
+                default:
+                    save();
+                    if (debounceTimeout) {
+                        clearTimeout(debounceTimeout);
+                    }
+            }
         }
     }
 
