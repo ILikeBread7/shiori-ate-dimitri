@@ -990,5 +990,5 @@ Are you okay?
 All right.
 
 Are you sure you want to go back to the route selection screen?
-Warning: Any unsaved progress will be lost!
+Warning: Any unsaved progress on the current route will be lost! Autosave will be overwritten!
 
