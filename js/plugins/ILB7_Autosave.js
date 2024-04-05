@@ -36,7 +36,6 @@
     var needsToSave = false;
 
     function save() {
-        console.log('save');
         var saveFileId = AUTOSAVE_ID;
         $gameSystem.onBeforeSave();
         if (DataManager.autosaveGame(saveFileId)) {
