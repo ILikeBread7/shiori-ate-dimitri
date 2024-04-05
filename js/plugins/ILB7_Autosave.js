@@ -11,7 +11,9 @@
  * @default 0
  * 
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
- *       It creates the autosave file whenever an event finishes execution.
+ *       It creates the autosave file whenever an event that modified some
+ *       of the data used for enabling/disabling events finishes execution
+ *       (modifying switches, variables, self-switches, party or items).
  *       The autosave file is overwritten each time a new autosave occurs.
  * 
  * Plugin Command:
