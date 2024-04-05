@@ -6,18 +6,12 @@
  * @plugindesc Autosave plugin for RPG Maker MV
  * @author I_LIKE_BREAD7
  * 
- * @param Debounce time (miliseconds)
- * @desc Time delay for save debounce, if you don't know what that means leave the default value (0)
- * @default 0
- *
  * @param Switch ID
  * @desc ID of the switch to turn autosave on, 0 if should be on all the time, does not affect autosave from plugin command
  * @default 0
  * 
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
  *       It creates the autosave file whenever an event finishes execution.
- *       The saves are debounced (delayed and omitted if a new save needs to be performed)
- *       to limit saving multiple times when more than one event finishes at the same time.
  *       The autosave file is overwritten each time a new autosave occurs.
  * 
  * Plugin Command:
@@ -28,12 +22,12 @@
 (function() {
 
     var parameters = PluginManager.parameters('ILB7_Autosave');
-    var debounceTime = Number(parameters['Debounce time (miliseconds)'] || 0);
     var switchId = Number(parameters['Switch ID']);
 
     var AUTOSAVE_ID = 1;
 
     var needsToSave = false;
+    var gameStarted = false;
 
     function save() {
         var saveFileId = AUTOSAVE_ID;
@@ -46,16 +40,12 @@
         }
     }
     
-    var debounceTimeout = null;
     var _Game_Event_unlock = Game_Event.prototype.unlock;
     Game_Event.prototype.unlock = function() {
         _Game_Event_unlock.call(this);
         
         if (needsToSave && (!switchId || $gameSwitches.value(switchId))) {
-            if (debounceTimeout) {
-                clearTimeout(debounceTimeout);
-            }
-            debounceTimeout = setTimeout(save, debounceTime);
+            save();
         }
     };
 
@@ -122,6 +112,22 @@
         _Window_SavefileList_drawFileId.call(this, id, x, y);
     };
 
+    var _Scene_Map_start = Scene_Map.prototype.start;
+    Scene_Map.prototype.start = function() {
+        _Scene_Map_start.call(this);
+        if (gameStarted) {
+            return;
+        }
+        gameStarted = true;
+        needsToSave = false;
+    };
+
+    var _Scene_Load_onLoadSuccess = Scene_Load.prototype.onLoadSuccess;
+    Scene_Load.prototype.onLoadSuccess = function () {
+        _Scene_Load_onLoadSuccess.call(this);
+        gameStarted = false;
+    }
+
     var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
     Game_Interpreter.prototype.pluginCommand = function(command, args) {
         _Game_Interpreter_pluginCommand.call(this, command, args);
@@ -134,9 +140,6 @@
                 // if no arg provided, just save
                 default:
                     save();
-                    if (debounceTimeout) {
-                        clearTimeout(debounceTimeout);
-                    }
             }
         }
     }
