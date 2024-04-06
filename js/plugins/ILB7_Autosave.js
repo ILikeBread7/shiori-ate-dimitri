@@ -148,7 +148,6 @@
                     this._index++;
                     save();
                     this._index--;
-
             }
         }
     }
