@@ -13,12 +13,12 @@
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
  *       It creates the autosave file whenever an event that modified some
  *       of the data used for enabling/disabling events finishes execution
- *       (modifying switches, variables, self-switches, party or items).
+ *       (player transfer and modifying switches, variables, self-switches, party or items).
  *       The autosave file is overwritten each time a new autosave occurs.
  * 
  * Plugin Command:
  *   ILB7_Autosave         # Performs autosave manually
- *   ILB7_Autosave prevent # Prevents autosave if put at the end of an event that would otherwise autosave
+ *   ILB7_Autosave prevent # Prevents autosave if put at the end of an event (after all commands that trigger the autosave) that would otherwise autosave
  */
 
 (function() {
@@ -141,7 +141,14 @@
 
                 // if no arg provided, just save
                 default:
+                    // the index voodoo is needed to prevent the plugin command
+                    // from executing on load from an autosave which was saved
+                    // using the same plugin command (the first command to be
+                    // executed is the one which was current during saving)
+                    this._index++;
                     save();
+                    this._index--;
+
             }
         }
     }
