@@ -3,7 +3,7 @@
 //=============================================================================
 
 /*:
- * @plugindesc Autosave plugin for RPG Maker MV
+ * @plugindesc Autosave plugin for RPG Maker MV (v.1.0.0)
  * @author I_LIKE_BREAD7
  * 
  * @param Switch ID
@@ -17,8 +17,9 @@
  *       The autosave file is overwritten each time a new autosave occurs.
  * 
  * Plugin Command:
- *   ILB7_Autosave         # Performs autosave manually
+ *   ILB7_Autosave         # Performs autosave manually (not affected by the switch parameter)
  *   ILB7_Autosave prevent # Prevents autosave if put at the end of an event (after all commands that trigger the autosave) that would otherwise autosave
+ *   ILB7_Autosave trigger # Triggers autosave if put at the end of an event that would otherwise not trigger it  (is affected by the switch parameter)
  */
 
 (function() {
@@ -137,6 +138,9 @@
             switch(args[0]) {
                 case 'prevent':
                     needsToSave = false;
+                break;
+                case 'trigger':
+                    needsToSave = true;
                 break;
 
                 // if no arg provided, just save
