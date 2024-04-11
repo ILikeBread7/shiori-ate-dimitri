@@ -1,4 +1,5 @@
 More detailed credits with links in the credits.txt file and on the itch.io page.
+And thank you for playing this game! :)
 
 // add some generic copyright of cover hololive text or something
 https://hololivepro.com/en/terms/
@@ -22,6 +23,8 @@ https://freesound.org/people/se2001/sounds/521779/
 https://openclipart.org/detail/192598/crow
 https://openclipart.org/detail/248341/musical-stars
 https://openclipart.org/detail/305616/simple-eye
+https://openclipart.org/detail/241063/golden-arrow-2-no-background
+https://openclipart.org/detail/170852/cleaver
 
 https://starbirdresources.itch.io/haunted-mansion
 
@@ -32,6 +35,7 @@ http://yanfly.moe/2015/10/10/yep-2-message-core/ - message core plugin!!! not ma
 https://forums.rpgmakerweb.com/index.php?threads/hide-item-quantities.59568/
 https://forums.rpgmakerweb.com/index.php?threads/conditional-show-choices-hide-or-disable-choices.96941/
 https://forums.rpgmakerweb.com/index.php?threads/jackkels-persistent-switches.47640/
+https://forums.rpgmakerweb.com/index.php?threads/new-game-sound-effect.100040/
 
 https://commons.wikimedia.org/wiki/File:The_Human_blood_under_microscope_04.png
 https://upload.wikimedia.org/wikipedia/commons/3/3c/The_Human_blood_under_microscope_04.png
