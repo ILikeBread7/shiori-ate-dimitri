@@ -22,6 +22,10 @@
  * @desc Color for the selected item's text
  * @default #ff0
  * 
+ * @param Selected outline color
+ * @desc Color for the selected item's text
+ * @default rgba(0, 0, 0, 0.5)
+ * 
  * @param Text align
  * @desc Item text alignment (left/center/right)
  * @default center
@@ -49,6 +53,7 @@
 
     var parameters = PluginManager.parameters('ILB7_TitleMenuImages');
     var selectedColor = String(parameters['Selected color'] || '#ff0');
+    var selectedOutlineColor = String(parameters['Selected outline color'] || 'rgba(0, 0, 0, 0.5');
     var textAlign = String(parameters['Text align'] || 'center');
     var textOffsetX = Number(parameters['Text offset X'] || 0);
     var textOffsetY = Number(parameters['Text offset Y']) || 0;
@@ -73,6 +78,7 @@
         }
         this.x = windowX;
         this.y = windowY;
+        
     };
 
     Window_TitleCommand.prototype.drawItem = function(index) {
@@ -81,12 +87,15 @@
         var bitmap = selected ? imageSelected : imageRegular;;
         this.changePaintOpacity(this.isCommandEnabled(index));
         this.contents.blt(bitmap, 0, 0, bitmap.width, bitmap.height, rect.x, rect.y);
+        var baseOutlineColor = this.contents.outlineColor;
         this.setOptionTextColor(selected);
         this.drawText(this.commandName(index), rect.x + textOffsetX, rect.y + textOffsetY, rect.width, textAlign);
+        this.contents.outlineColor = baseOutlineColor;
     }
 
     Window_TitleCommand.prototype.setOptionTextColor = function(selected, disabled) {
         if (selected) {
+            this.contents.outlineColor = selectedOutlineColor;
             this.changeTextColor(selectedColor);
         } else {
             this.resetTextColor();
