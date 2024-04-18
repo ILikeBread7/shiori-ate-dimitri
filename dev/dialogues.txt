@@ -992,3 +992,7 @@ All right.
 Are you sure you want to go back to the route selection screen?
 Warning: Any unsaved progress on the current route will be lost! Autosave will be overwritten!
 
+It's a drawing of a pebble.
+
+There are figurines of Kiara and Marine in the drawer.
+
