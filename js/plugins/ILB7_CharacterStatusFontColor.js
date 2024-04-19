@@ -27,49 +27,34 @@
         actorColors[actorId] = color;
     }
 
-    Window_Base.prototype.drawActorName = function(actor, x, y, width) {
-        width = width || 168;
+    var _Window_MenuStatus_drawActorSimpleStatus = Window_MenuStatus.prototype.drawActorSimpleStatus;
+    Window_MenuStatus.prototype.drawActorSimpleStatus = function(actor, x, y, width) {
         var color = actorColors[actor.actorId()];
         if (color) {
             this.changeTextColor(color);
-        } else {
-            this.resetTextColor();
         }
+        _Window_MenuStatus_drawActorSimpleStatus.call(this, actor, x, y, width);
+        this.resetTextColor();
+    };
+
+    Window_Base.prototype.drawActorName = function(actor, x, y, width) {
+        width = width || 168;
         this.drawText(actor.name(), x, y, width);
     };
 
     Window_Base.prototype.drawActorClass = function(actor, x, y, width) {
         width = width || 168;
-        var color = actorColors[actor.actorId()];
-        if (color) {
-            this.changeTextColor(color);
-        } else {
-            this.resetTextColor();
-        }
         this.drawText(actor.currentClass().name, x, y, width);
     };
 
     Window_Base.prototype.drawActorNickname = function(actor, x, y, width) {
         width = width || 270;
-        var color = actorColors[actor.actorId()];
-        if (color) {
-            this.changeTextColor(color);
-        } else {
-            this.resetTextColor();
-        }
         this.drawText(actor.nickname(), x, y, width);
     };
 
     Window_Base.prototype.drawActorLevel = function(actor, x, y) {
-        var color = actorColors[actor.actorId()];
-        if (color) {
-            this.changeTextColor(color);
-        } else {
-            this.resetTextColor();
-        }
         this.drawText(TextManager.levelA, x, y, 48);
         this.drawText(actor.level, x + 84, y, 36, 'right');
     };
-
 
 })();
