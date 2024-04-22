@@ -10,6 +10,10 @@
  * @desc ID of the switch to turn autosave on, 0 if should be on all the time, does not affect autosave from plugin command
  * @default 0
  * 
+ * @param Label
+ * @desc Text label of the autosave on save/load menu, empty if none should be there
+ * @default (Autosave)
+ * 
  * @help This plugin automatically saves the game state to a file named "autosave.rpgsave".
  *       It creates the autosave file whenever an event that modified some
  *       of the data used for enabling/disabling events finishes execution
@@ -26,6 +30,7 @@
 
     var parameters = PluginManager.parameters('ILB7_Autosave');
     var switchId = Number(parameters['Switch ID']);
+    var autosaveLabel = parameters['Label'];
 
     var AUTOSAVE_ID = 1;
 
@@ -110,7 +115,7 @@
     var _Window_SavefileList_drawFileId = Window_SavefileList.prototype.drawFileId;
     Window_SavefileList.prototype.drawFileId = function(id, x, y) {
         if (id === AUTOSAVE_ID) {
-            this.drawText('(Autosave)', x, y + this.lineHeight());
+            this.drawText(autosaveLabel, x, y + this.lineHeight());
         }
         _Window_SavefileList_drawFileId.call(this, id, x, y);
     };
