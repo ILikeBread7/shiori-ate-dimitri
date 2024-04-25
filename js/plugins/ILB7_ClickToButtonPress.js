@@ -10,7 +10,7 @@
  * It does not map when a message is on the screen or the main menu is open to not mess with the games system too much.
  * Example 1: ILB7_ClickToButtonPress left ok 10 20 30 40 - maps the left click on a rectangle at 10,20 position with 30 width and 40 height to the ok (enter) key
  * Example 2: ILB7_ClickToButtonPress left ok - maps the left click on any part of the screen to the ok (enter) key
- * Keys: ok (ENTER), left, right, up, down, escape
+ * Keys: ok (ENTER), left, right, up, down, escape, tab, shift, control, pageup, pagedown, debug (F9)
  * 
  * Plugin Command:
  *   ILB7_ClickToButtonPress left key X Y WIDTH HEIGHT  # Maps left mouse click on the specified to the key
@@ -71,7 +71,7 @@
         var zoneY = zone[2];
         var zoneW = zone[3];
         var zoneH = zone[4];
-        return x >= zoneX && x <= zoneX + zoneW && y >= zoneY && y <= zoneY + zoneH;
+        return x >= zoneX && x < zoneX + zoneW && y >= zoneY && y < zoneY + zoneH;
     }
 
     var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
