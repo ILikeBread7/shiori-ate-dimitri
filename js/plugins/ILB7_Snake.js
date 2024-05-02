@@ -26,6 +26,7 @@
 
     Window_Snake.prototype.initialize = function(x, y, width, height) {
         Window_Base.prototype.initialize.call(this, x, y, width, height);
+        this.opacity = 0;
     };
 
     Window_Snake.prototype.refresh = function() {
