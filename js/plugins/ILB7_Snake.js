@@ -16,6 +16,7 @@
 (function() {
 
     var bitmap = ImageManager.loadPicture('pebble');
+    var bgImagePath = 'img/titles1/Volcano'
 
     function Window_Snake() {
         this.initialize.apply(this, arguments);
@@ -26,18 +27,22 @@
 
     Window_Snake.prototype.initialize = function(x, y, width, height) {
         Window_Base.prototype.initialize.call(this, x, y, width, height);
-        this.opacity = 0;
+        var bgSprite = new Sprite();
+        bgSprite.initialize(ImageManager.loadBitmapFromPath(bgImagePath));
+        this.addChildToBack(bgSprite);
     };
 
     Window_Snake.prototype.refresh = function() {
-        console.log('refresh')
         this.contents.clear();
         var x = 0;
         var y = 0;
         this.contents.blt(bitmap, 0, 0, bitmap.width, bitmap.height, x, y);
     };
 
-    
+    Window_Snake.prototype.standardPadding = function() {
+        return 0;
+    }
+
     function Scene_Snake() {
         this.initialize.apply(this, arguments);
     }
@@ -63,24 +68,40 @@
         this.addWindow(this._messageWindow);
 
         // Display a message
-        $gameMessage.addText("Hello, world!");
+        // $gameMessage.addText("Hello, world!");
 
         // Wait for player input to close the message window
         // this.setWaitMode('button');
     };
 
+    var first = true;
     Scene_Snake.prototype.update = function() {
         Scene_Base.prototype.update.call(this);
-        console.log('scene updated')
-        console.log($gameMessage.isBusy());
         this._window.refresh();
-        
+        console.log('scene updated')
+
+        console.log($gameMessage.isBusy());
+        // var commonEvent = $dataCommonEvents[113];
+        if (first) {
+            first = false;
+            var commonEvent = $dataCommonEvents[113];
+            this._interpreter = new Game_Interpreter();
+            this._interpreter.setup(commonEvent.list);
+        }
+
+        if (this._interpreter) {
+            if (!this._interpreter.isRunning()) {
+                this._interpreter = null; // Clear the interpreter when it's finished
+            } else {
+                this._interpreter.update();
+            }
+        }
+
         // // Draw the image at position (x, y)
         // var x = 100; // X-coordinate
         // var y = 100; // Y-coordinate
 
         // this.contents.blt(bitmap, 0, 0, bitmap.width, bitmap.height, x, y);
-
     };
 
     // // Dispose of the scene
@@ -97,8 +118,18 @@
                 case 'start':
                     SceneManager.push(Scene_Snake);
                 break;
+                case 'stop':
+                    SceneManager.pop();
+                break;
             }
         }
     };
+
+    ImageManager.loadBitmapFromPath = function(path) {
+        var lastSlashIndex = path.lastIndexOf('/')
+        var folder = path.substr(0, lastSlashIndex + 1);
+        var filename = path.substr(lastSlashIndex + 1);
+        return ImageManager.loadBitmap(folder, filename);
+    }
 
 })();
