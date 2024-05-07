@@ -19,6 +19,7 @@
     var tileHeight = 48;
     var boardWidthTiles = 0;
     var boardHeightTiles = 0;
+    var boardTotalTiles = 0;
     var bgImagePath = 'img/titles1/Volcano'
     var snakeImagePath = 'img/characters/Actor1'
     var snakeImageOffsets = [[0, 0]];
@@ -26,9 +27,11 @@
     var foodImageOffsets = [[0, 0]];
     var eatSoundEffect = { name: 'Absorb1', volume: 90, pitch: 100, pan: 0 };
     var crashSoundEffect = { name: 'Absorb2', volume: 90, pitch: 100, pan: 0 };
+    var scoreText = 'Score: ';
 
     var finishCommonEventId = 114;
     var cancelCommonEventId = 113;
+    var scoreVarId = 34;
 
     var UP = 8;
     var DOWN = 2;
@@ -37,11 +40,14 @@
     var segments;
     var food;
     var direction;
+    var directionBuffer;
+    var pointerInput;
     var alive;
     var score;
     var generateFoodCounter;
     var frameCounter;
     var canChangeDir;
+    var level;
 
     function Window_Snake() {
         this.initialize.apply(this, arguments);
@@ -56,29 +62,24 @@
         this._boardYOffset = Graphics.height % tileHeight;
         boardWidthTiles = Math.floor(Graphics.width / tileWidth);
         boardHeightTiles = Math.floor(Graphics.height / tileHeight);
+        boardTotalTiles = boardWidthTiles * boardHeightTiles;
         this._snakeBitmap = ImageManager.loadBitmapFromPath(snakeImagePath);
         this._foodBitmap = ImageManager.loadBitmapFromPath(foodImagePath);
         this._bgSprite = new Sprite();
         this._bgSprite.initialize(ImageManager.loadBitmapFromPath(bgImagePath));
         this.addChildToBack(this._bgSprite);
-        segments = [ { x : Math.floor(boardWidthTiles / 2), y : Math.floor(boardHeightTiles / 2) } ];
-        food = null;
-        direction = LEFT;
-        alive = true;
-        score = 0;
-        generateFoodCounter = 0;
-        frameCounter = 0;
-        canChangeDir = true;
+        resetGameState();
     };
 
     Window_Snake.prototype.refresh = function() {
         this.contents.clear();
-        for (var i = 0; i < segments.length; ++i) {
+        this.contents.drawText(scoreText + score, 0, 0, Graphics.width, this.lineHeight(), 'left');
+        for (var i = 0; i < segments.length; i++) {
             var segment = segments[i];
             this.contents.blt(this._snakeBitmap, snakeImageOffsets[i % snakeImageOffsets.length][0], snakeImageOffsets[i % snakeImageOffsets.length][1], tileWidth, tileHeight, segment.x * tileWidth + this._boardXOffset, segment.y * tileHeight + this._boardYOffset);
         }
         if (food) {
-            this.contents.blt(this._foodBitmap, foodImageOffsets[i % foodImageOffsets.length][0], foodImageOffsets[i % foodImageOffsets.length][1], tileWidth, tileHeight, food.x * tileWidth + this._boardXOffset, food.y * tileHeight + this._boardYOffset);
+            this.contents.blt(this._foodBitmap, foodImageOffsets[score % foodImageOffsets.length][0], foodImageOffsets[score % foodImageOffsets.length][1], tileWidth, tileHeight, food.x * tileWidth + this._boardXOffset, food.y * tileHeight + this._boardYOffset);
         }
     };
 
@@ -96,23 +97,32 @@
     Scene_Snake.prototype.initialize = function() {
         Scene_Base.prototype.initialize.call(this);
         this._interpreter = null;
+        document.addEventListener('pointerdown', pointerEventListener);
     };
 
     Scene_Snake.prototype.create = function() {
         Scene_Base.prototype.create.call(this);
-        this.createWindowLayer();
-
         this._window = new Window_Snake(0, 0, Graphics.width, Graphics.height);
-        this.addWindow(this._window);
-
+        this.addChild(this._window);
         this._messageWindow = new Window_Message();
-        this.addWindow(this._messageWindow);
+        this.addChild(this._messageWindow);
+        this._messageWindow.subWindows().forEach(function(window) {
+            this.addChild(window);
+        }, this);
     };
 
     Scene_Snake.prototype.update = function() {
         Scene_Base.prototype.update.call(this);
         this._window.refresh();
+        this.updateGame();
+    };
 
+    Scene_Snake.prototype.terminate = function() {
+        Scene_Base.prototype.terminate.call(this);
+        document.removeEventListener('pointerdown', pointerEventListener);
+    };
+
+    Scene_Snake.prototype.updateGame = function() {
         if (this._interpreter) {
             if (this._interpreter.isRunning()) {
                 this._interpreter.update();
@@ -124,11 +134,11 @@
         }
 
         if (Input.isTriggered('cancel')) {
+            saveScore();
             if (cancelCommonEventId) {
-                saveScore();
                 this.playCommonEvent(cancelCommonEventId);
             } else {
-                saveScoreAndEndScene();
+                endScene();
             }
             return;
         }
@@ -141,10 +151,14 @@
             setDirection(RIGHT);
         } else if (Input.isTriggered('down')) {
             setDirection(DOWN);
+        } else if (directionBuffer) {
+            setDirection(directionBuffer);
+        } else if (pointerInput) {
+            setDirection(pointerInput);
         }
 
         frameCounter++;
-        if (alive && frameCounter % 8 === 0) {
+        if (alive && frameCounter % level === 0) {
             move();
             if (!food) {
                 generateFoodCounter++;
@@ -157,14 +171,15 @@
         }
 
         if (!alive) {
+            saveScore();
             if (finishCommonEventId) {
                 this.playCommonEvent(finishCommonEventId);
             } else {
                 $gameMessage.addText('Total score: ' + score);
-                saveScoreAndEndScene();
+                endScene();
             }
         }
-    };
+    }
 
     Scene_Snake.prototype.playCommonEvent = function(commonEventId) {
         var commonEvent = $dataCommonEvents[commonEventId];
@@ -178,24 +193,53 @@
         if (command === 'ILB7_Snake') {
             switch (args[0]) {
                 case 'start':
+                    level = Number(Window_Base.prototype.convertEscapeCharacters(args[1]));
                     SceneManager.push(Scene_Snake);
                 break;
                 case 'stop':
                     if (SceneManager._scene.constructor === Scene_Snake) {
-                        saveScoreAndEndScene();
+                        endScene();
                     }
+                break;
+                case 'savescore':
+                    saveScore();
+                break;
+                case 'reset':
+                    if (args[1]) {
+                        level = Number(umber(Window_Base.prototype.convertEscapeCharacters(args[1])));
+                    }
+                    resetGameState();
                 break;
             }
         }
     };
 
-    function saveScoreAndEndScene() {
-        saveScore();
+    function endScene() {
         SceneManager.pop();
     }
 
     function saveScore() {
-        // TODO
+        if (scoreVarId) {
+            $gameVariables.setValue(scoreVarId, score);
+        }
+    }
+
+    function resetGameState() {
+        segments = [
+            {
+                x : Math.floor(boardWidthTiles / 4),
+                y : Math.floor(boardHeightTiles / 2)
+            }
+        ];
+        food = null;
+        direction = RIGHT;
+        directionBuffer = null;
+        pointerInput = null;
+        alive = true;
+        score = 0;
+        generateFoodCounter = 0;
+        frameCounter = 0;
+        canChangeDir = true;
     }
 
     ImageManager.loadBitmapFromPath = function(path) {
@@ -217,8 +261,8 @@
     }
 
     function collidesWithItself(segments) {
-        for (var i = 1; i < segments.length; ++i) {
-            if (segments[0].x == segments[i].x && segments[0].y == segments[i].y) {
+        for (var i = 1; i < segments.length; i++) {
+            if (segments[0].x === segments[i].x && segments[0].y === segments[i].y) {
                 return true;
             }
         }
@@ -227,19 +271,22 @@
 
     function move() {
         segments.unshift(copySegment(segments[0]));
-        if (direction == UP) {
+        if (direction === UP) {
             segments[0].y--;
-        } else if (direction == DOWN) {
+        } else if (direction === DOWN) {
             segments[0].y++;
-        } else if (direction == LEFT) {
+        } else if (direction === LEFT) {
             segments[0].x--;
-        } else if (direction == RIGHT) {
+        } else if (direction === RIGHT) {
             segments[0].x++;
         }
-        if (food != null && food.x == segments[0].x && food.y == segments[0].y) {
+        if (food != null && food.x === segments[0].x && food.y === segments[0].y) {
             food = null;
             score++;
-            console.log(score);
+            if (segments.length === boardTotalTiles) {
+                alive = false;
+                return;
+            }
             AudioManager.playSe(eatSoundEffect);
         } else {
             segments.pop();
@@ -250,42 +297,84 @@
         }
     }
 
-	function collidesWithSegments(food, segments) {
-		for (var i = 0; i < segments.length; ++i) {
-			if (food.x == segments[i].x && food == segments[i].y) {
-				return true;
-			}
-		}
-		return false;
-	}
+    function collidesWithSegments(food, segments) {
+        for (var i = 0; i < segments.length; i++) {
+            if (food.x === segments[i].x && food.y === segments[i].y) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	function generateFood(segments) {
-		do {
-			food = {
+    function generateFood(segments) {
+        do {
+            food = {
                 x: Math.floor(Math.random() * boardWidthTiles),
                 y: Math.floor(Math.random() * boardHeightTiles)
             };
-		} while (collidesWithSegments(food, segments));
-	}
+        } while (collidesWithSegments(food, segments));
+    }
 
     function setDirection(newDirection) {
         if (!canChangeDir) {
+            directionBuffer = newDirection;
             return;
         }
-        if (direction == UP && newDirection == DOWN) {
+        if (direction === UP && newDirection === DOWN) {
             return;
         }
-        if (direction == DOWN && newDirection == UP) {
+        if (direction === DOWN && newDirection === UP) {
             return;
         }
-        if (direction == LEFT && newDirection == RIGHT) {
+        if (direction === LEFT && newDirection === RIGHT) {
             return;
         }
-        if (direction == RIGHT && newDirection == LEFT) {
+        if (direction === RIGHT && newDirection === LEFT) {
             return;
         }
         direction = newDirection;
         canChangeDir = false;
+        directionBuffer = null;
+        pointerInput = null;
+    }
+
+    function pointerEventListener(e) {
+        if (e.button !== 0) {
+            return;
+        }
+        var x = Graphics.pageToCanvasX(e.pageX);
+        var y = Graphics.pageToCanvasY(e.pageY);
+
+        var headSegment = segments[0];
+        if (direction === RIGHT || direction === LEFT) {
+            if (touchUp(y, headSegment)) {
+                pointerInput = UP;
+            } else if (touchDown(y, headSegment)) {
+                pointerInput = DOWN;
+            }
+        } else {
+            if (touchLeft(x, headSegment)) {
+                pointerInput = LEFT;
+            } else if (touchRight(x, headSegment)) {
+                pointerInput = RIGHT;
+            } 
+        }
+    }
+
+    function touchLeft(x, headSegment) {
+        return headSegment.x > x / tileWidth;
+    }
+    
+    function touchRight(x, headSegment) {
+        return headSegment.x < x / tileWidth;
+    }
+    
+    function touchUp(y, headSegment) {
+        return headSegment.y > y / tileHeight;
+    }
+    
+    function touchDown(y, headSegment) {
+        return headSegment.y < y / tileHeight;
     }
 
 })();

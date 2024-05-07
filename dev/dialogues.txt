@@ -1006,3 +1006,8 @@ We shouldn’t roam around Shiori’s house without her even knowing we’re her
 There’s no hurry, though.
 The emergency seems to have passed.
 
+Are you sure you want to quit?
+Total score:
+
+Would you like to play again?
+

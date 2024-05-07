@@ -36,7 +36,7 @@
         var y = Graphics.pageToCanvasY(e.pageY);
 
         var keyToPress;
-        switch(e.button) {
+        switch (e.button) {
             // Left mouse button
             case 0:
                 keyToPress = findKeyToPress(x, y, leftClickZones);
