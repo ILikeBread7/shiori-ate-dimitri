@@ -1011,3 +1011,9 @@ Total score:
 
 Would you like to play again?
 
+Use the arrow keys (or the left click) to control the snake.
+The current high score is H (X mode).
+
+Choose the skin.
+Choose the difficulty level.
+

@@ -1,5 +1,5 @@
 //=============================================================================
-// ILB7_ClickToButtonPress.js
+// ILB7_Snake.js
 //=============================================================================
 
 /*:
@@ -7,36 +7,100 @@
  * 
  * @author I_LIKE_BREAD7
  * 
+ * @param Tile width
+ * @desc The width of a single tile on the snake minigame's board
+ * @default 48
+ * 
+ * @param Tile height
+ * @desc The height of a single tile on the snake minigame's board
+ * @default 48
+ * 
+ * @param Background Image Path
+ * @desc The file path for the background image of the snake minigame
+ * @default img/titles1/Volcano
+ * 
+ * @param Snake Image Path
+ * @desc The file path for the snake character's image
+ * @default img/characters/Actor1
+ * 
+ * @param Snake Image Offsets
+ * @desc The offsets for the snake character's image, in pixels
+ * @default [[0, 0]]
+ * 
+ * @param Food Image Path
+ * @desc The file path for the food item's image
+ * @default img/characters/Actor2
+ * 
+ * @param Food Image Offsets
+ * @desc The offsets for the food item's image, in pixels
+ * @default [[0, 0]]
+ * 
+ * @param Eat Sound Effects
+ * @desc The sound effect played when the snake eats food
+ * @default [{"name":"Absorb2","volume":90,"pitch":100,"pan":0}]
+ * 
+ * @param Crash Sound Effect
+ * @desc The sound effect played when the snake crashes
+ * @default {"name":"Absorb1","volume":90,"pitch":100,"pan":0}
+ * 
+ * @param Score Text
+ * @desc The text displayed before the score value
+ * @default Score:
+ * 
+ * @param Finish Common Event ID
+ * @desc The ID of the common event to be triggered when the game finishes (or 0 if not used)
+ * @default 3
+ * 
+ * @param Cancel Common Event ID
+ * @desc The ID of the common event to be triggered when the game is cancelled (or 0 if not used)
+ * @default 2
+ * 
+ * @param Start Common Event ID
+ * @desc The ID of the common event to be triggered when the game starts (or 0 if not used)
+ * @default 1
+ * 
+ * @param Score Variable ID
+ * @desc The ID of the variable to store the score (or 0 if not used)
+ * @default 1
+ * 
  * @help This plugin allows you to create a custom scene in RPG Maker MV.
  * 
  * Plugin Command:
- *   ILB7_Snake start # Starts the game.
+ *   ILB7_Snake start 5                    # Starts the game at level 5 (lower levels are more difficult), accepts variables on the \V[ID] format
+ *   ILB7_Snake stop                       # Stops the minigame and returns to the map
+ *   ILB7_Snake reset                      # Resets the state of the game
+ *   ILB7_Snake snakeimageoffset 0,0 48,48 # Redefines the "Snake Image Offsets" parameter
+ *   ILB7_Snake foodimageoffset 0,0 48,48  # Redefines the "Food Image Offsets" parameter
+ *   ILB7_Snake eatse {"name":"Absorb2","volume":90,"pitch":100,"pan":0}   # Redefines the "Eat Sound Effects" parameter
+ *   ILB7_Snake crashse {"name":"Absorb1","volume":90,"pitch":100,"pan":0} # Redefines the "Crash Sound Effect" parameter
  */
 
 (function() {
 
-    var tileWidth = 48;
-    var tileHeight = 48;
-    var boardWidthTiles = 0;
-    var boardHeightTiles = 0;
-    var boardTotalTiles = 0;
-    var bgImagePath = 'img/titles1/Volcano'
-    var snakeImagePath = 'img/characters/Actor1'
-    var snakeImageOffsets = [[0, 0]];
-    var foodImagePath = 'img/characters/Dimitri'
-    var foodImageOffsets = [[0, 0]];
-    var eatSoundEffect = { name: 'Absorb1', volume: 90, pitch: 100, pan: 0 };
-    var crashSoundEffect = { name: 'Absorb2', volume: 90, pitch: 100, pan: 0 };
-    var scoreText = 'Score: ';
-
-    var finishCommonEventId = 114;
-    var cancelCommonEventId = 113;
-    var scoreVarId = 34;
+    var parameters = PluginManager.parameters('ILB7_Snake');
+    var tileWidth = Number(parameters['Tile width'] || 48);
+    var tileHeight = Number(parameters['Tile height'] || 48);
+    var bgImagePath = String(parameters['Background Image Path'] || 'img/titles1/Volcano');
+    var snakeImagePath = String(parameters['Snake Image Path'] || 'img/characters/Actor1');
+    var snakeImageOffsets = JSON.parse(parameters['Snake Image Offsets'] || '[[0, 0]]');
+    var foodImagePath = String(parameters['Food Image Path'] || 'img/characters/Actor2');
+    var foodImageOffsets = JSON.parse(parameters['Food Image Offsets'] || '[[0, 0]]');
+    var eatSoundEffects = JSON.parse(parameters['Eat Sound Effects'] || '[{"name":"Absorb2","volume":90,"pitch":100,"pan":0}]');
+    var crashSoundEffect = JSON.parse(parameters['Crash Sound Effect'] || '{"name":"Absorb1","volume":90,"pitch":100,"pan":0}');
+    var scoreText = String(parameters['Score Text'] || 'Score: ');
+    var finishCommonEventId = Number(parameters['Finish Common Event ID'] || 3);
+    var cancelCommonEventId = Number(parameters['Cancel Common Event ID'] || 2);
+    var startCommonEventId = Number(parameters['Start Common Event ID'] || 1);
+    var scoreVarId = Number(parameters['Score Variable ID'] || 1);
 
     var UP = 8;
     var DOWN = 2;
     var LEFT = 4;
     var RIGHT = 6;
+
+    var boardWidthTiles = 0;
+    var boardHeightTiles = 0;
+    var boardTotalTiles = 0;
     var segments;
     var food;
     var direction;
@@ -109,6 +173,9 @@
         this._messageWindow.subWindows().forEach(function(window) {
             this.addChild(window);
         }, this);
+        if (startCommonEventId) {
+            this.playCommonEvent(startCommonEventId);
+        }
     };
 
     Scene_Snake.prototype.update = function() {
@@ -134,11 +201,11 @@
         }
 
         if (Input.isTriggered('cancel')) {
-            saveScore();
             if (cancelCommonEventId) {
+                saveScore();
                 this.playCommonEvent(cancelCommonEventId);
             } else {
-                endScene();
+                saveScoreAndEndScene();
             }
             return;
         }
@@ -171,12 +238,12 @@
         }
 
         if (!alive) {
-            saveScore();
             if (finishCommonEventId) {
+                saveScore();
                 this.playCommonEvent(finishCommonEventId);
             } else {
                 $gameMessage.addText('Total score: ' + score);
-                endScene();
+                saveScoreAndEndScene();
             }
         }
     }
@@ -187,34 +254,8 @@
         this._interpreter.setup(commonEvent.list);
     }
 
-    var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
-    Game_Interpreter.prototype.pluginCommand = function(command, args) {
-        _Game_Interpreter_pluginCommand.call(this, command, args);
-        if (command === 'ILB7_Snake') {
-            switch (args[0]) {
-                case 'start':
-                    level = Number(Window_Base.prototype.convertEscapeCharacters(args[1]));
-                    SceneManager.push(Scene_Snake);
-                break;
-                case 'stop':
-                    if (SceneManager._scene.constructor === Scene_Snake) {
-                        endScene();
-                    }
-                break;
-                case 'savescore':
-                    saveScore();
-                break;
-                case 'reset':
-                    if (args[1]) {
-                        level = Number(umber(Window_Base.prototype.convertEscapeCharacters(args[1])));
-                    }
-                    resetGameState();
-                break;
-            }
-        }
-    };
-
-    function endScene() {
+    function saveScoreAndEndScene() {
+        saveScore();
         SceneManager.pop();
     }
 
@@ -282,12 +323,12 @@
         }
         if (food != null && food.x === segments[0].x && food.y === segments[0].y) {
             food = null;
-            score++;
             if (segments.length === boardTotalTiles) {
                 alive = false;
                 return;
             }
-            AudioManager.playSe(eatSoundEffect);
+            AudioManager.playSe(eatSoundEffects[score % eatSoundEffects.length]);
+            score++;
         } else {
             segments.pop();
         }
@@ -339,7 +380,7 @@
     }
 
     function pointerEventListener(e) {
-        if (e.button !== 0) {
+        if (e.button !== 0 || $gameMessage.isBusy()) {
             return;
         }
         var x = Graphics.pageToCanvasX(e.pageX);
@@ -376,5 +417,56 @@
     function touchDown(y, headSegment) {
         return headSegment.y < y / tileHeight;
     }
+
+    var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
+    Game_Interpreter.prototype.pluginCommand = function(command, args) {
+        _Game_Interpreter_pluginCommand.call(this, command, args);
+        if (command === 'ILB7_Snake') {
+            switch (args[0]) {
+                case 'start':
+                    level = Number(Window_Base.prototype.convertEscapeCharacters(args[1]));
+                    SceneManager.push(Scene_Snake);
+                break;
+                case 'stop':
+                    if (SceneManager._scene.constructor === Scene_Snake) {
+                        saveScoreAndEndScene();
+                    }
+                break;
+                case 'reset':
+                    if (args[1]) {
+                        level = Number(umber(Window_Base.prototype.convertEscapeCharacters(args[1])));
+                    }
+                    resetGameState();
+                break;
+                case 'snakeimageoffset':
+                    var offsets = args.slice(1);
+                    snakeImageOffsets = [];
+                    for (var i = 0; i < offsets.length; i++) {
+                        var split = offsets[i].split(',');
+                        snakeImageOffsets.push([Number(split[0]), Number(split[1])]);
+                    }
+                break;
+                case 'foodimageoffset':
+                    var offsets = args.slice(1);
+                    foodImageOffsets = [];
+                    for (var i = 0; i < offsets.length; i++) {
+                        var split = offsets[i].split(',');
+                        foodImageOffsets.push([Number(split[0]), Number(split[1])]);
+                    }
+                break;
+                case 'eatse':
+                    var effects = args.slice(1);
+                    eatSoundEffects = [];
+                    for (var i = 0; i < effects.length; i++) {
+                        eatSoundEffects.push(JSON.parse(effects[i]));
+                    }
+                break;
+                case 'crashse':
+                    var seJson = args.slice(1).join('');
+                    crashSoundEffect = JSON.parse(seJson);
+                break;
+            }
+        }
+    };
 
 })();
