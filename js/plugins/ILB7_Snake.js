@@ -71,6 +71,8 @@
  *   ILB7_Snake reset                      # Resets the state of the game
  *   ILB7_Snake snakeimageoffset 0,0 48,48 # Redefines the "Snake Image Offsets" parameter
  *   ILB7_Snake foodimageoffset 0,0 48,48  # Redefines the "Food Image Offsets" parameter
+ *   ILB7_Snake snakeimage img/characters/Actor1 # Redefines the "Snake Image Path" parameter
+ *   ILB7_Snake foodimage img/characters/Actor2  # Redefines the "Food Image Path" parameter
  *   ILB7_Snake eatse {"name":"Absorb2","volume":90,"pitch":100,"pan":0}   # Redefines the "Eat Sound Effects" parameter
  *   ILB7_Snake crashse {"name":"Absorb1","volume":90,"pitch":100,"pan":0} # Redefines the "Crash Sound Effect" parameter
  */
@@ -464,6 +466,12 @@
                 case 'crashse':
                     var seJson = args.slice(1).join('');
                     crashSoundEffect = JSON.parse(seJson);
+                break;
+                case 'snakeimage':
+                    snakeImagePath = args[1];
+                break;
+                case 'foodimage':
+                    foodImagePath = args[1];
                 break;
             }
         }

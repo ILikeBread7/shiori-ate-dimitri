@@ -12,7 +12,6 @@ https://opengameart.org/content/fantasy-ui-box
 https://opengameart.org/content/wood-texture-tiles
 https://opengameart.org/content/beige-stone-tile-floor-256px
 https://opengameart.org/content/walls-stained-with-blood
-
 https://freesound.org/people/ScouseMouseJB/sounds/536705/
 https://freesound.org/people/kwahmah_02/sounds/275071/
 https://freesound.org/people/pfranzen/sounds/339370/
@@ -46,6 +45,8 @@ https://openclipart.org/detail/170852/cleaver
 https://openclipart.org/detail/203383/huella-de-perro-1
 https://opengameart.org/content/brushed-rocks
 https://openclipart.org/detail/309105/jewel-icon
+https://openclipart.org/detail/243222/hanging-bird-cage-silhouette
+https://openclipart.org/detail/217509/raven
 
 https://starbirdresources.itch.io/haunted-mansion
 
