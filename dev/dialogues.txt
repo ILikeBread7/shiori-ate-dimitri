@@ -1019,3 +1019,5 @@ The current high score is H (X mode).
 Choose the skin.
 Choose the difficulty level.
 
+Avoid detection by standing behind objects (like the flower pots).
+
