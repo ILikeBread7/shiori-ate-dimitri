@@ -1022,3 +1022,98 @@ Choose the difficulty level.
 
 Avoid detection by standing behind objects (like the flower pots).
 
+HoloAdvent - Shiori ate The Meat Tree
+
+A fan game by I_LIKE_BREAD7
+
+=== Credits ===
+
+= Game engine =
+RPG Maker MV
+
+= Graphics =
+
+RPG Maker MV assets
+
+Character portraits and the ending screen by
+波比好朋友 pixelart @haopanyo
+
+Character sprites by
+Ivan Zenovyx
+
+Haunted Mansion tileset by
+Starbird
+
+Animal sprites by
+whtdragon
+
+Fantasy UI Box by
+StumpyStrust
+
+Keyboard key sprites by
+TRBRY
+
+Various backgrounds and textures by
+plemuzic (bloody wall), JCW (wood texture), Tiziana 
+(floor texture), and Starry Skydancer (rock texture)
+
+Various graphics from Openclipart
+drunken_duck (crow), Mathieu (musical stars), GDJ 
+(eye, golden arrow, and bird cage), hatalar205 
+(cleaver), EOIAnna (dog footprint), Loggail (jewel), 
+and gustavorezende (raven)
+
+Microscope slides by
+Yulia Shved (blood), Syed Sajidul Islam (onion and 
+pond water),  Przemysław Tarka (chloroplasts), and 
+Smartneddy (feather)
+
+Font "New Tegomin" by
+Kousuke Nagai
+
+And the ugly ones were made by me :D
+
+
+= Music and sound effects =
+
+RPG Maker MV assets
+
+Music from DOVA-SYNDROME
+亡骸に口づけを (title screen bgm) by ゆうり
+狩場にすむカニバリズム (tension scenes bgm) 
+by TOGA
+罪の後悔 (stealth sections bgm) by マニーラ
+気まぐれ猫の歌 (Fuwamoco’s bgm) by 
+ゆうきわたる
+始まりのスキップ (Nerissa’s bgm) by 
+くれっぷ
+spring waltz (Shiori’s bgm) by えだまめ88
+今日はどこに行こうかな (Novelite’s bgm) 
+by 石屋
+Pop out (Bijou’s bgm) and 君はレトロ (credits 
+bgm) by yuhei komatsu
+
+Various sound effects from freesound.org
+ScouseMouseJB (cutting lettuce), kwahmah_02 
+(doorbell), pfranzen (phone dialing), Felfa (dial 
+tone), lnab (keyboard typing), thomasanthony321 
+(footsteps), and se2001 (siren)
+
+= Plugins =
+
+Built-in RPG Maker MV plugins
+Community_Basic and MadeWithMV
+
+YEP_MessageCore by Yanfly
+SRD_AutoNameBox by SumRndmDde
+MrTS_HideQuantities by Mr. Trivel
+ALOE_ConditionalChoices by Aloe Guvner
+JKL_PersistentData by Jackkel Dragon
+NewGameSe by Triacontane
+
+And some project-specific plugins made by me
+
+= Everything else =
+Also me
+
+Thank you for playing! :)
