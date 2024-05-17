@@ -7,7 +7,7 @@
  * @author I_LIKE_BREAD7
  *
  * @param Step Sound
- * @desc Default sound effect to play when a step is made.
+ * @desc The sound effect to play when a step is made.
  * @default {"name":"Cursor1","volume":90,"pitch":100,"pan":0}
  *
  * @param Player Step Sound Switch
@@ -18,12 +18,11 @@
  * @desc Switch ID to enable/disable event step sound. Put 0 to always enable.
  * @default 2
  *
- * @param Event Step Sounds
- * @desc JSON array of event and map ID combinations with custom step sounds. Example [{ "mapId": 1, "eventId": 2 }]
- * @default []
+ * @param Step Sound Events
+ * @desc JSON array of event and map ID combinations for events with the step sounds.
+ * @default [{"mapId": 1, "eventId": 2}, {"mapId": 3, "eventId": 4}]
  *
- * @help ILB7_StepSound.js
- * ============================================================================
+ * @help This plugin does not provide plugin commands.
  */
 
 (function() {
@@ -31,7 +30,16 @@
     var stepSound = JSON.parse(parameters['Step Sound']);
     var playerStepSwitch = Number(parameters['Player Step Sound Switch']);
     var eventStepSwitch = Number(parameters['Event Step Sound Switch']);
-    var eventStepSounds = JSON.parse(parameters['Event Step Sounds']);
+    var stepSoundEvents = JSON.parse(parameters['Step Sound Events']);
+
+    var stepsMapEvents = [];
+    for (var i = 0; i < stepSoundEvents.length; i++) {
+        var event = stepSoundEvents[i];
+        if (!stepsMapEvents[event.mapId]) {
+            stepsMapEvents[event.mapId] = [];
+        }
+        stepsMapEvents[event.mapId][event.eventId] = true;
+    }
 
     var _Game_Player_moveStraight = Game_Player.prototype.moveStraight;
     Game_Player.prototype.moveStraight = function(d) {
@@ -44,13 +52,19 @@
     var _Game_Event_moveStraight = Game_Event.prototype.moveStraight;
     Game_Event.prototype.moveStraight = function(d) {
         _Game_Event_moveStraight.call(this, d);
+        this.playStepSoundIfApplicable();
+    };
+
+    var _Game_Event_moveDiagonally = Game_Event.prototype.moveDiagonally;
+    Game_Event.prototype.moveDiagonally = function(horz, vert) {
+        _Game_Event_moveDiagonally.call(this, horz, vert);
+        this.playStepSoundIfApplicable();
+    };
+
+    Game_Event.prototype.playStepSoundIfApplicable = function() {
         if (!eventStepSwitch || $gameSwitches.value(eventStepSwitch)) {
-            var mapId = $gameMap.mapId();
-            var eventId = this.eventId();
-            var eventStepSound = eventStepSounds.find(function(entry) {
-                return entry.mapId === mapId && entry.eventId === eventId;
-            });
-            if (eventStepSound) {
+            var stepsMap = stepsMapEvents[$gameMap.mapId()];
+            if (stepsMap && stepsMap[this.eventId()]) {
                 AudioManager.playSe(stepSound);
             }
         }
