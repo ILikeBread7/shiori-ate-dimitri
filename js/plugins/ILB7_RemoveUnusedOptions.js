@@ -55,25 +55,32 @@
     var meVolume = JSON.parse(parameters['Enable Me volume']);
     var seVolume = JSON.parse(parameters['Enable Se volume']);
 
-    Window_Options.prototype.makeCommandList = function() {
-        if (alwaysDash) {
-            this.addCommand(TextManager.alwaysDash, 'alwaysDash');
+    if (!alwaysDash || !commandRemember) {
+        Window_Options.prototype.addGeneralOptions = function() {
+            if (alwaysDash) {
+                this.addCommand(TextManager.alwaysDash, 'alwaysDash');
+            }
+            if (commandRemember) {
+                this.addCommand(TextManager.commandRemember, 'commandRemember');
+            }
         }
-        if (commandRemember) {
-            this.addCommand(TextManager.commandRemember, 'commandRemember');
+    }
+
+    if (!bgmVolume || !bgsVolume || !meVolume || !seVolume) {
+        Window_Options.prototype.addVolumeOptions = function() {
+            if (bgmVolume) {
+                this.addCommand(TextManager.bgmVolume, 'bgmVolume');
+            }
+            if (bgsVolume) {
+                this.addCommand(TextManager.bgsVolume, 'bgsVolume');
+            }
+            if (meVolume) {
+                this.addCommand(TextManager.meVolume, 'meVolume');
+            }
+            if (seVolume) {
+                this.addCommand(TextManager.seVolume, 'seVolume');
+            }
         }
-        if (bgmVolume) {
-            this.addCommand(TextManager.bgmVolume, 'bgmVolume');
-        }
-        if (bgsVolume) {
-            this.addCommand(TextManager.bgsVolume, 'bgsVolume');
-        }
-        if (meVolume) {
-            this.addCommand(TextManager.meVolume, 'meVolume');
-        }
-        if (seVolume) {
-            this.addCommand(TextManager.seVolume, 'seVolume');
-        }
-    };
+    }
 
 })();
