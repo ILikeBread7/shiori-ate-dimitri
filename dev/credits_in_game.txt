@@ -180,3 +180,207 @@ Feather01.jpg by The original uploader was Smartneddy
                             Also me
 
                   Thank you for playing! :)
+
+========= Credits with colors =========
+          \C[2]HoloAdvent - Shiori ate The Meat Tree\C[0]
+
+                A fan game by \C[3]I_LIKE_BREAD7\C[0]
+
+                        \C[4]=== Credits ===\C[0]
+
+
+
+
+                      \C[4]== Game engine ==\C[0]
+                         RPG Maker MV
+
+
+
+
+                        \C[4]== Graphics ==\C[0]
+
+                     RPG Maker MV assets
+
+
+      Character portraits and the ending screen by
+                  \C[3]波比好朋友 pixelart @haopanyo\C[0]
+
+
+              HoloAdvent character sprites by
+                         \C[3]Ivan Zenovyx\C[0]
+
+
+                   Other character sprites
+       \C[3]Me\C[0] and the RPG Maker MV character generator
+
+
+                 Haunted Mansion tileset by
+                            \C[3]Starbird\C[0]
+
+
+                    Font "New Tegomin" by
+                         \C[3]Kousuke Nagai\C[0]
+
+
+
+   \C[4]= Various sprites, backgrounds, and textures by =\C[0]
+
+               \C[3]StumpyStrust\C[0] (Fantasy UI Box)
+
+  \C[3]whtdragon\C[0] (animal sprites - cats, frogs, and ducks)
+
+                    \C[3]TRBRY\C[0] (keyboard keys)
+
+                   \C[3]plemuzic\C[0] (bloody wall)
+
+                      \C[3]JCW\C[0] (wood texture)
+
+                   \C[3]Tiziana\C[0] (floor texture)
+
+              \C[3]Starry Skydancer\C[0] (rock texture)
+
+
+
+          \C[4]= Various graphics from Openclipart =\C[0]
+
+                     \C[3]drunken_duck\C[0] (crow)
+
+                   \C[3]Mathieu\C[0] (musical stars)
+
+          \C[3]GDJ\C[0] (eye, golden arrow, and bird cage)
+
+                     \C[3]hatalar205\C[0] (cleaver)
+
+                   \C[3]EOIAnna\C[0] (dog footprint)
+
+                        \C[3]Loggail\C[0] (jewel)
+
+                   \C[3]gustavorezende\C[0] (raven)
+
+
+
+                  \C[4]= Microscope slides by =\C[0]
+
+   The_Human_blood_under_microscope_04.png by \C[3]Yulia 
+                     Shved\C[0], CC BY-SA 4.0 
+<https://creativecommons.org/licenses/by-sa/4.0>, via 
+                  Wikimedia Commons (blood)
+
+        Onion_Cells_Under_the_Microscope.jpg and 
+ Pond_Water_Under_the_Microscope.jpg by \C[3]Syed Sajidul 
+                      Islam\C[0], CC BY 4.0 
+  <https://creativecommons.org/licenses/by/4.0>, via 
+         Wikimedia Commons (onion and pond water)
+
+    Chloroplasty.jpg by \C[3]Przemysław Tarka\C[0], CC BY 4.0 
+  <https://creativecommons.org/licenses/by/4.0>, via 
+             Wikimedia Commons (chloroplasts)
+
+Feather01.jpg by The original uploader was \C[3]Smartneddy\C[0] 
+           at Chinese Wikipedia., CC BY-SA 3.0 
+<http://creativecommons.org/licenses/by-sa/3.0/>, via 
+                Wikimedia Commons (feather)
+
+
+
+           And the ugly ones were made by \C[3]me\C[0] :D
+
+
+
+
+               \C[4]== Music and sound effects ==\C[0]
+
+                     RPG Maker MV assets
+
+
+
+                \C[4]= Music from DOVA-SYNDROME =\C[0]
+
+       亡骸に口づけを (title screen bgm) by \C[3]ゆうり\C[0]
+
+  狩場にすむカニバリズム (tension scenes bgm) by \C[3]TOGA\C[0]
+
+       罪の後悔 (stealth sections bgm) by \C[3]マニーラ\C[0]
+
+    気まぐれ猫の歌 (Fuwamoco’s bgm) by \C[3]ゆうきわたる\C[0]
+
+      始まりのスキップ (Nerissa’s bgm) by \C[3]くれっぷ\C[0]
+
+         spring waltz (Shiori’s bgm) by \C[3]えだまめ88\C[0]
+
+      今日はどこに行こうかな (Novelite’s bgm) by \C[3]石屋\C[0]
+
+     Pop out (Bijou’s bgm) and 君はレトロ (credits bgm)
+                       by \C[3]yuhei komatsu\C[0]
+
+
+
+      \C[4]= Various sound effects from freesound.org =\C[0]
+
+         Cutting lettus.wav by \C[3]ScouseMouseJB\C[0] -- 
+      https://freesound.org/s/536705/ -- License: 
+                        Attribution 4.0
+
+               Doorbell A# by \C[3]kwahmah_02\C[0] -- 
+      https://freesound.org/s/275071/ -- License: 
+                        Attribution 3.0
+
+           Dialing on an iPhone by \C[3]pfranzen\C[0] -- 
+      https://freesound.org/s/339370/ -- License: 
+                        Attribution 4.0
+
+               dial tone_us.mp3 by \C[3]Felfa\C[0] -- 
+      https://freesound.org/s/188694/ -- License: 
+                        Attribution 4.0
+
+             Typing On A Keyboard by \C[3]lnab\C[0] -- 
+ https://freesound.org/s/527726/ -- License: Creative 
+                           Commons 0
+
+ Running footsteps on wood.WAV by \C[3]thomasanthony321\C[0] -- 
+ https://freesound.org/s/682772/ -- License: Creative 
+                           Commons 0
+
+                High-Low Siren by \C[3]se2001\C[0] -- 
+ https://freesound.org/s/521779/ -- License: Creative 
+                           Commons 0
+
+
+
+
+                         \C[4]== Plugins ==\C[0]
+
+             \C[4]= Built-in RPG Maker MV plugins =\C[0]
+
+                        Community_Basic
+
+                           MadeWithMV
+
+
+
+                   \C[4]= Third-party plugins =\C[0]
+
+                  YEP_MessageCore by \C[3]Yanfly\C[0]
+
+               SRD_AutoNameBox by \C[3]SumRndmDde\C[0]
+
+             MrTS_HideQuantities by \C[3]Mr. Trivel\C[0]
+
+          ALOE_ConditionalChoices by \C[3]Aloe Guvner\C[0]
+
+           JKL_PersistentData by \C[3]Jackkel Dragon\C[0]
+
+                  NewGameSe by \C[3]Triacontane\C[0]
+
+      And some project-specific plugins made by \C[3]me\C[0]
+
+
+
+
+                    \C[4]== Everything else ==\C[0]
+                            Also \C[3]me\C[0]
+
+
+
+
+                  Thank you for playing! :)
