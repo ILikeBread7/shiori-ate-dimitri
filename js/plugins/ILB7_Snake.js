@@ -436,7 +436,7 @@
                 break;
                 case 'reset':
                     if (args[1]) {
-                        level = Number(umber(Window_Base.prototype.convertEscapeCharacters(args[1])));
+                        level = Number(Window_Base.prototype.convertEscapeCharacters(args[1]));
                     }
                     resetGameState();
                 break;
