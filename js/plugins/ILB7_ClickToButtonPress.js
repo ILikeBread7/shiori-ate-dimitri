@@ -35,21 +35,23 @@
         var x = Graphics.pageToCanvasX(e.pageX);
         var y = Graphics.pageToCanvasY(e.pageY);
 
-        var keyToPress;
+        var keysToPress;
         switch (e.button) {
             // Left mouse button
             case 0:
-                keyToPress = findKeyToPress(x, y, leftClickZones);
+                keysToPress = findKeysToPress(x, y, leftClickZones);
             break;
             
             // Right mouse button
             case 2:
-                keyToPress = findKeyToPress(x, y, rightClickZones);
+                keysToPress = findKeysToPress(x, y, rightClickZones);
             break;
         }
 
-        if (keyToPress) {
-            Input.simulatePress(keyToPress);
+        if (keysToPress) {
+            for (var i = 0; i < keysToPress.length; i++) {
+                Input.simulatePress(keysToPress[i]);
+            }
         }
     });
 
@@ -57,13 +59,15 @@
         Input.clear();
     });
 
-    function findKeyToPress(x, y, zones) {
+    function findKeysToPress(x, y, zones) {
+        var keys = [];
         for (var i = 0; i < zones.length; i++) {
             var zone = zones[i];
             if (zone.length === 1 || zoneCollides(x, y, zone)) {
-                return zone[0];
+                keys.push(zone[0]);
             }
         }
+        return keys;
     }
 
     function zoneCollides(x, y, zone) {
