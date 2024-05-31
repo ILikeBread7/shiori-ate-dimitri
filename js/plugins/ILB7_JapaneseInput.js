@@ -6,11 +6,11 @@
  * @plugindesc This plugin allows the player to use the Japanese name input
  * @author I_LIKE_BREAD7
  *
- * @param japaneseLanguageId
- * @type number
+ * @param Japanese Language Name
+ * @type string
  * @min 0
- * @desc The language ID that represents Japanese.
- * @default 1
+ * @desc The language name that represents Japanese as defined in the SRD_TranslationEngine plugin
+ * @default 日本語
  *
  * @help
  * This plugin allows the player to use the Japanese name input when the language is set to Japanese
@@ -20,10 +20,10 @@
 (function() {
 
     var parameters = PluginManager.parameters('ILB7_JapaneseInput');
-    var japaneseLanguageId = Number(parameters['japaneseLanguageId'] || 1);
+    var japaneseLanguageName = parameters['Japanese Language Name'] || '日本語';
 
     Game_System.prototype.isJapanese = function() {
-        return ConfigManager.language === japaneseLanguageId;
+        return ConfigManager.getLanguage() === japaneseLanguageName;
     };
     
 })();
