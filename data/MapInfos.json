@@ -11,8 +11,8 @@ null,
 {"id":9,"expanded":true,"name":"Corridor F1","order":4,"parentId":0,"scrollX":416.5,"scrollY":328.5},
 {"id":10,"expanded":false,"name":"Bathroom","order":7,"parentId":9,"scrollX":416.5,"scrollY":328.5},
 {"id":11,"expanded":false,"name":"Streaming room","order":8,"parentId":9,"scrollX":416.5,"scrollY":328.5},
-{"id":12,"expanded":true,"name":"Corridor F2","order":10,"parentId":0,"scrollX":687.5,"scrollY":320.5},
+{"id":12,"expanded":true,"name":"Corridor F2","order":10,"parentId":0,"scrollX":416.5,"scrollY":320.5},
 {"id":13,"expanded":false,"name":"Library","order":11,"parentId":12,"scrollX":416.5,"scrollY":328.5},
 {"id":14,"expanded":false,"name":"Bedroom","order":12,"parentId":12,"scrollX":416.5,"scrollY":328.5},
-{"id":15,"expanded":false,"name":"Novelite's house","order":13,"parentId":0,"scrollX":832,"scrollY":640}
+{"id":15,"expanded":false,"name":"Novelite's house","order":13,"parentId":0,"scrollX":416.5,"scrollY":328.5}
 ]
