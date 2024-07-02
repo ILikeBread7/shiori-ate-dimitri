@@ -43,10 +43,13 @@
 
     var _Game_Player_moveStraight = Game_Player.prototype.moveStraight;
     Game_Player.prototype.moveStraight = function(d) {
-        _Game_Player_moveStraight.call(this, d);
-        if (!playerStepSwitch || $gameSwitches.value(playerStepSwitch)) {
+        if (
+            (!playerStepSwitch || $gameSwitches.value(playerStepSwitch))
+            && this.canPass(this.x, this.y, d)
+        ) {
             AudioManager.playSe(stepSound);
         }
+        _Game_Player_moveStraight.call(this, d);
     };
 
     var _Game_Event_moveStraight = Game_Event.prototype.moveStraight;
