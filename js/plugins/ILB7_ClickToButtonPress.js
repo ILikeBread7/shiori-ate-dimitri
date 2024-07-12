@@ -28,7 +28,10 @@
     }
 
     document.addEventListener('pointerdown', function(e) {
-        if ($gameMessage.isBusy() || SceneManager._scene.constructor === Scene_Menu) {
+        if (
+            ($gameMessage.isBusy() && !$gameMessage.scrollMode())
+            || SceneManager._scene.constructor === Scene_Menu
+        ) {
             return;
         }
 
