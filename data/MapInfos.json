@@ -13,6 +13,6 @@ null,
 {"id":11,"expanded":false,"name":"Streaming room","order":8,"parentId":9,"scrollX":416.5,"scrollY":328.5},
 {"id":12,"expanded":true,"name":"Corridor F2","order":10,"parentId":0,"scrollX":416.5,"scrollY":320.5},
 {"id":13,"expanded":false,"name":"Library","order":11,"parentId":12,"scrollX":416.5,"scrollY":328.5},
-{"id":14,"expanded":false,"name":"Bedroom","order":12,"parentId":12,"scrollX":416.5,"scrollY":328.5},
+{"id":14,"expanded":false,"name":"Bedroom","order":12,"parentId":12,"scrollX":423.5,"scrollY":318},
 {"id":15,"expanded":false,"name":"Novelite's house","order":13,"parentId":0,"scrollX":416.5,"scrollY":328.5}
 ]
