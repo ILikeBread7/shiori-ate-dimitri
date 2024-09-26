@@ -182,8 +182,8 @@
 
     Scene_Snake.prototype.update = function() {
         Scene_Base.prototype.update.call(this);
-        this._window.refresh();
         this.updateGame();
+        this._window.refresh();
     };
 
     Scene_Snake.prototype.terminate = function() {

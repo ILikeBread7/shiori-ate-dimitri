@@ -29,7 +29,6 @@
     Scene_PreTitle.prototype.initialize = function() {
         Scene_Base.prototype.initialize.call(this);
         this._interpreter = null;
-        console.log(ConfigManager)
     }
 
     Scene_PreTitle.prototype.create = function() {
