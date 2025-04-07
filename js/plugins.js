@@ -4,7 +4,6 @@ var $plugins =
 [
 {"name":"MAC_High_Hz_Fixes","status":true,"description":"Fixed various issues on high refresh rate monitors","parameters":{}},
 {"name":"Community_Basic","status":true,"description":"Plugin used to set basic parameters.","parameters":{"cacheLimit":"30","screenWidth":"816","screenHeight":"624","changeWindowWidthTo":"","changeWindowHeightTo":"","renderingMode":"auto","alwaysDash":"off"}},
-{"name":"MadeWithMv","status":true,"description":"Show a Splash Screen \"Made with MV\" and/or a Custom Splash Screen before going to main screen.","parameters":{"Show Made With MV":"false","Made with MV Image":"MadeWithMv","Show Custom Splash":"false","Custom Image":"","Fade Out Time":"120","Fade In Time":"120","Wait Time":"160"}},
 {"name":"ILB7_IncreasePartyMembers","status":true,"description":"Changes the number of battle party members","parameters":{"Party size":"5"}},
 {"name":"ILB7_RemoveCharacterStatusBattleItems","status":true,"description":"Removes battle related items on the character status screen","parameters":{"Number of images":"5","Image X":"360","Image Y":"0"}},
 {"name":"ILB7_RemoveUnusedOptions","status":true,"description":"Removes unused options from the options menu","parameters":{"Enable Always dash":"true","Enable Command remember":"false","Enable Bgm volume":"true","Enable Bgs volume":"true","Enable Me volume":"true","Enable Se volume":"true"}},
@@ -23,7 +22,7 @@ var $plugins =
 {"name":"ALOE_ConditionalChoices","status":true,"description":"v1.2.0\nDefine conditions to hide or disable choices in the event menu","parameters":{"patternStart":"<<","patternEnd":">>"}},
 {"name":"CustomTitleCommand","status":true,"description":"Adds a custom option to the title screen to run a common event.","parameters":{"Command Text":"Minigames","Common Event ID":"4"}},
 {"name":"ILB7_Timer","status":true,"description":"Creates a timer","parameters":{"Timer variable ID":"25"}},
-{"name":"ILB7_CustomMainMenuOption","status":true,"description":"Adds custom options to the main menu which run common events.","parameters":{"Options List":"[38,\"Reset minigame\",3],[40,\"Minigames menu\",3],[101,\"Chapter selection\",40]"}},
+{"name":"ILB7_CustomMainMenuOption","status":true,"description":"Adds custom options to the main menu which run common events.","parameters":{"Options List":"[38,\"Reset minigame\",3],[40,\"Minigames menu\",3],[101,\"Chapter selection\",40],[125,\"Load\",0]"}},
 {"name":"ILB7_ChoicesNoScrolling","status":true,"description":"Disables scrolling in choices window making all available choices always visible","parameters":{}},
 {"name":"ILB7_DisableMovementLeftRight","status":true,"description":"Disables player movement left and right using a switch","parameters":{"Switch ID":"22"}},
 {"name":"ILB7_MapDispayNameAllowEscapeCodes","status":true,"description":"Allows using messave escape codes in map names","parameters":{}},
@@ -38,6 +37,8 @@ var $plugins =
 {"name":"ILB7_StepSound","status":true,"description":"Plays a sound effect whenever the player or a specified event makes a step.","parameters":{"Step Sound":"{\"name\":\"Cursor1\",\"volume\":50,\"pitch\":80,\"pan\":0}","Player Step Sound Switch":"13","Event Step Sound Switch":"0","Step Sound Events":"[{ \"mapId\": 7, \"eventId\": 10 }, { \"mapId\": 8, \"eventId\": 17 }, { \"mapId\": 9, \"eventId\": 11 }, { \"mapId\": 9, \"eventId\": 21 }, { \"mapId\": 11, \"eventId\": 11 }]"}},
 {"name":"ILB7_OnBootCommonEvent","status":true,"description":"Runs a common event on game startup (before the title screen)","parameters":{"Common Event ID":"119"}},
 {"name":"ILB7_JapaneseInput","status":true,"description":"This plugin allows the player to use the Japanese name input","parameters":{"Japanese Language Name":"日本語"}},
+{"name":"ILB_SRDTranslationEngineWebFix","status":true,"description":"Fixes the SRD_Translation engine plugin for web export","parameters":{}},
 {"name":"SRD_TranslationEngine","status":true,"description":"Provides game developers with an in-game tool for building and managing translations/localizations for their game's text.","parameters":{"Source Language Name":"English","Languages":"[\"日本語\"]","Default Language":"","Provide Option?":"true","Option Name":"Language","Allow Message Update?":"true"}},
-{"name":"Furigana","status":true,"description":"Allows to add rubi text (furigana) to text messages using the format {漢字|ふりがな}.","parameters":{"Furigana Text Size":"12","Furigana Vertical Offset":"-12"}}
+{"name":"Furigana","status":true,"description":"Allows to add rubi text (furigana) to text messages using the format {漢字|ふりがな}.","parameters":{"Furigana Text Size":"12","Furigana Vertical Offset":"-12"}},
+{"name":"ILB_StretchAlways","status":true,"description":"Makes the game canvas always stretch (or always not stretch, dpending on the parameter)","parameters":{"Stretch mode":"true"}}
 ];
